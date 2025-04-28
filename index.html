@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha D&D 5e</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page1">
+        <div id="cabecalho" class="cabecalho">
+            <input type="text" name="nomePersonagem" id="nomePersonagem">
+            <select name="classePersonagem" id="classePersonagem" class="classePersonagem">
+                <option value="0">Escolha sua Classe</option>
+                <option value="1">Bárbaro</option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+            </select>
+            <input type="text" name="nivelPersonagem" id="nivelPersonagem">
+            <select name="antecedente" id="antecedente" class="antecedente">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+            </select>
+
+            <input type="text" name="nomeJogador" id="nomeJogador">
+            <select name="raca" id="raca" class="raca">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+            </select>
+            <select name="tendencia" id="tendencia" class="tendencia">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+            </select>
+            <input type="text" name="pontosExperiencia" id="pontosExperiencia">
+        </div>
+        <div id="atributos" class="atributos">
+            <input type="text" name="forca" id="forca">
+            <input type="text" name="destreza" id="destreza">
+            <input type="text" name="constituicao" id="constituicao">
+            <input type="text" name="inteligencia" id="inteligencia">
+            <input type="text" name="sabedoria" id="sabedoria">
+            <input type="text" name="carisma" id="carisma">
+        </div>
+        <div id="modificadores" class="modificadores">
+            <span id="modificadorForca">1</span>
+            <span id="modificadorDestreza">1</span>
+            <span id="modificadorConstituicao">1</span>
+            <span id="modificadorInteligencia">1</span>
+            <span id="modificadorSabedoria">1</span>
+            <span id="modificadorCarisma">1</span>
+            <span id="sabedoriaPassiva">1</span> <!-- Baseado na percepção -->
+        </div>
+        <div id="inspiracaoProficiencia" class="inspiracaoProficiencia">
+            <input type="text" name="inspiracao" id="inspiracao">
+            <span id="bonusProficiencia">1</span><!-- De acordo com o nível -->
+        </div>
+        <div id="testeResistencia" class="testeResistencia">
+            <input type="checkbox" name="resistenciaForca" id="resistenciaForca">
+            <span id="modificadorResistenciaForca">1</span>
+            <input type="checkbox" name="resistenciaDestreza" id="resistenciaDestreza">
+            <span id="modificadorResistenciaDestreza">1</span>
+            <input type="checkbox" name="resistenciaConstituicao" id="resistenciaConstituicao">
+            <span id="modificadorResistenciaConstituicao">1</span>
+            <input type="checkbox" name="resistenciaInteligencia" id="resistenciaInteligencia">
+            <span id="modificadorResistenciaInteligencia">1</span>
+            <input type="checkbox" name="resistenciaSabedoria" id="resistenciaSabedoria">
+            <span id="modificadorResistenciaSabedoria">1</span>
+            <input type="checkbox" name="resistenciaCarisma" id="resistenciaCarisma">
+            <span id="modificadorResistenciaCarisma">1</span>
+        </div>
+        <div id="pericias" class="pericias">
+            <input type="checkbox" name="periciaAcrobacia" id="periciaAcrobacia">
+            <span id="modificadorPericiaAcrobacia">1</span>
+            <input type="checkbox" name="periciaArcanismo" id="periciaArcanismo">
+            <span id="modificadorPericiaArcanismo">1</span>
+            <input type="checkbox" name="periciaAtletismo" id="periciaAtletismo">
+            <span id="modificadorPericiaAtletismo">1</span>
+            <input type="checkbox" name="periciaAtuacao" id="periciaAtuacao">
+            <span id="modificadorPericiaAtuacao">1</span>
+            <input type="checkbox" name="periciaBlefar" id="periciaBlefar">
+            <span id="modificadorPericiaBlefar">1</span>
+            <input type="checkbox" name="periciaFurtividade" id="periciaFurtividade">
+            <span id="modificadorPericiaFurtividade">1</span>
+            <input type="checkbox" name="periciaHistoria" id="periciaHistoria">
+            <span id="modificadorPericiaHistoria">1</span>
+            <input type="checkbox" name="periciaIntimidacao" id="periciaIntimidacao">
+            <span id="modificadorPericiaIntimidacao">1</span>
+            <input type="checkbox" name="periciaIntuicao" id="periciaIntuicao">
+            <span id="modificadorPericiaIntuicao">1</span>
+            <input type="checkbox" name="periciaInvestigacao" id="periciaInvestigacao">
+            <span id="modificadorPericiaInvestigacao">1</span>
+            <input type="checkbox" name="periciaLidarComAnimais" id="periciaLidarComAnimais">
+            <span id="modificadorPericiaLidarComAnimais">1</span>
+            <input type="checkbox" name="periciaMedicina" id="periciaMedicina">
+            <span id="modificadorPericiaMedicina">1</span>
+            <input type="checkbox" name="periciaNatureza" id="periciaNatureza">
+            <span id="modificadorPericiaNatureza">1</span>
+            <input type="checkbox" name="periciaPercepcao" id="periciaPercepcao">
+            <span id="modificadorPericiaPercepcao">1</span>
+            <input type="checkbox" name="periciaPersuasao" id="periciaPersuasao">
+            <span id="modificadorPericiaPersuasao">1</span>
+            <input type="checkbox" name="periciaPrestidigitacao" id="periciaPrestidigitacao">
+            <span id="modificadorPericiaPrestidigitacao">1</span>
+            <input type="checkbox" name="periciaReligiao" id="periciaReligiao">
+            <span id="modificadorPericiaReligiao">1</span>
+            <input type="checkbox" name="periciaSobrevivencia" id="periciaSobrevivencia">
+            <span id="modificadorPericiaSobrevivencia">1</span>
+        </div>
+        <div id="classeArmaduraIniciativaDeslocamento" class="classeArmaduraIniciativaDeslocamento">
+            <span id="classeArmadura">1</span>
+            <span id="iniciativa">1</span>
+            <span id="deslocamento">1</span>
+        </div>
+        <div id="vida" class="vida">
+            <span id="pontosDeVidaTotais">1</span>
+            <input type="text" name="pontosDeVidaAtuais" id="pontosDeVidaAtuais">
+            <input type="text" name="pontosDeVidaTemporarios" id="pontosDeVidaTemporarios">
+            <span id="totalDadosDeVida">1</span>
+            <span id="dadosDeVida">1</span>
+            <div id="testeContraMorte" class="testeContraMorte">
+                <div id="testeContraMorteSucesso" class="testeContraMorteSucesso">
+                    <input type="checkbox" name="primeiroSucesso" id="primeiroSucesso">
+                    <input type="checkbox" name="segundoSucesso" id="segundoSucesso">
+                    <input type="checkbox" name="terceiroSucesso" id="terceiroSucesso">
+                </div>
+                <div id="testeContraMorteFracasso" class="testeContraMorteFracasso">
+                    <input type="checkbox" name="primeiroFracasso" id="primeiroFracasso">
+                    <input type="checkbox" name="segundoFracasso" id="segundoFracasso">
+                    <input type="checkbox" name="terceiroFracasso" id="terceiroFracasso">
+                </div>
+            </div>
+        </div>
+        <div id="ataquesMagiasArmaduras" class="ataquesMagiasArmaduras">
+            <div id="nomeAtaqueMagiaArmadura" class="nomeAtaqueMagiaArmadura">
+                <input type="text" name="nomeArmadura" id="nomeArmadura" placeholder="Nome da armadura">
+                <input type="text" name="nomeEscudo" id="nomeEscudo" placeholder="Escudo">
+                <input type="text" name="nomeItemMaoDireita" id="nomeItemMaoDireita" placeholder="Item Mão Direita">
+                <input type="text" name="nomeItemMaoEsquerda" id="nomeItemMaoEsquerda" placeholder="Item Mão Esquerda">
+                <input type="text" name="nomeItemSegundarioMaoDireita" id="nomeItemSegundarioMaoDireita" placeholder="Item Secundário Mão Direita">
+                <input type="text" name="nomeItemSecundarioMaoEsquerda" id="nomeItemSecundarioMaoEsquerda" placeholder="Item Secundário Mão Esquerda">
+                <input type="text" name="nomeItemMagicoMaoDireita" id="nomeItemMagicoMaoDireita" placeholder="Item Mágico Mão Direita">
+                <input type="text" name="nomeItemMagicoMaoEsquerda" id="nomeItemMagicoMaoEsquerda" placeholder="Item Mágico Mão Esquerda">
+                <input type="text" name="nomeItemExtra" id="nomeItemExtra" placeholder="Item Extra">
+            </div>
+            <div id="bonusAtaqueMagiaArmadura" class="bonusAtaqueMagiaArmadura">
+                <input type="text" name="bonusArmadura" id="bonusArmadura" placeholder="Bônus da armadura">
+                <input type="text" name="bonusEscudo" id="bonusEscudo" placeholder="Bônus de Escudo">
+                <input type="text" name="bonusItemMaoDireita" id="bonusItemMaoDireita" placeholder="Bônus do Item Mão Direita">
+                <input type="text" name="bonusItemMaoEsquerda" id="bonusItemMaoEsquerda" placeholder="Bônus do Item Mão Esquerda">
+                <input type="text" name="bonusItemSegundarioMaoDireita" id="bonusItemSegundarioMaoDireita" placeholder="Bônus do Item Secundário Mão Direita">
+                <input type="text" name="bonusItemSecundarioMaoEsquerda" id="bonusItemSecundarioMaoEsquerda" placeholder="Bônus do Item Secundário Mão Esquerda">
+                <input type="text" name="bonusItemMagicoMaoDireita" id="bonusItemMagicoMaoDireita" placeholder="Bônus do Item Mágico Mão Direita">
+                <input type="text" name="bonusItemMagicoMaoEsquerda" id="bonusItemMagicoMaoEsquerda" placeholder="Bônus do Item Mágico Mão Esquerda">
+                <input type="text" name="bonusItemExtra" id="bonusItemExtra" placeholder="Bônus do Item Extra">
+            </div>
+            <div id="danoAtaqueMagiaArmadura" class="danoAtaqueMagiaArmadura">
+                <input type="text" name="danoArmadura" id="danoArmadura" placeholder="Dano da armadura">
+                <input type="text" name="danoEscudo" id="danoEscudo" placeholder="Dano do Escudo">
+                <input type="text" name="danoItemMaoDireita" id="danoItemMaoDireita" placeholder="Dano do Item Mão Direita">
+                <input type="text" name="danoItemMaoEsquerda" id="danoItemMaoEsquerda" placeholder="Dano do Item Mão Esquerda">
+                <input type="text" name="danoItemSegundarioMaoDireita" id="danoItemSegundarioMaoDireita" placeholder="Dano do Item Secundário Mão Direita">
+                <input type="text" name="danoItemSecundarioMaoEsquerda" id="danoItemSecundarioMaoEsquerda" placeholder="Dano do Item Secundário Mão Esquerda">
+                <input type="text" name="danoItemMagicoMaoDireita" id="danoItemMagicoMaoDireita" placeholder="Dano do Item Mágico Mão Direita">
+                <input type="text" name="danoItemMagicoMaoEsquerda" id="danoItemMagicoMaoEsquerda" placeholder="Dano do Item Mágico Mão Esquerda">
+                <input type="text" name="dnaoItemExtra" id="danoItemExtra" placeholder="Dano do Item Extra">
+            </div>
+            <div id="tipoDanoAtaqueMagiaArmadura" class="tipoDanoAtaqueMagiaArmadura">
+                <input type="text" name="tipoDanoArmadura" id="tipoDanoArmadura" placeholder="Tipo de dano da armadura">
+                <input type="text" name="tipoDanoEscudo" id="tipoDanoEscudo" placeholder="Tipo de dano do Escudo">
+                <input type="text" name="tipoDanoItemMaoDireita" id="tipoDanoItemMaoDireita" placeholder="Tipo de dano do Item Mão Direita">
+                <input type="text" name="tipoDanoItemMaoEsquerda" id="tipoDanoItemMaoEsquerda" placeholder="Tipo de dano do Item Mão Esquerda">
+                <input type="text" name="tipoDanoItemSegundarioMaoDireita" id="tipoDanoItemSegundarioMaoDireita" placeholder="Tipo de dano do Item Secundário Mão Direita">
+                <input type="text" name="tipoDanoItemSecundarioMaoEsquerda" id="tipoDanoItemSecundarioMaoEsquerda" placeholder="Tipo de dano do Item Secundário Mão Esquerda">
+                <input type="text" name="tipoDanoItemMagicoMaoDireita" id="tipoDanoItemMagicoMaoDireita" placeholder="Tipo de dano do Item Mágico Mão Direita">
+                <input type="text" name="tipoDanoItemMagicoMaoEsquerda" id="tipoDanoItemMagicoMaoEsquerda" placeholder="Tipo de dano do Item Mágico Mão Esquerda">
+                <input type="text" name="tipoDanoItemExtra" id="tipoDanoItemExtra" placeholder="Tipo de Dano do Item Extra">
+            </div>
+        </div>
+        <div id="equipamentos" class="equipamentos">
+            <div id="dinheiro" class="dinheiro">
+                <input type="text" name="pecasCobre" id="pecasCobre">
+                <input type="text" name="pecasPrata" id="pecasPrata">
+                <input type="text" name="pecasElectro" id="pecasElectro">
+                <input type="text" name="pecasOuro" id="pecasOuro">
+                <input type="text" name="pecasPlatina" id="pecasPlatina">
+            </div>
+            <div id="listaEquipamentos" class="listaEquipamentos">
+                <textarea name="equipamentosItens" id="equipamentosItens"></textarea>
+            </div>
+        </div>
+        <div id="antecedentes" class="antecedentes">
+            <textarea name="tracosPersonalidade" id="tracosPersonalidade"></textarea>
+            <textarea name="ideais" id="ideais"></textarea>
+            <textarea name="ligacoes" id="ligacoes"></textarea>
+            <textarea name="defeitos" id="defeitos"></textarea>
+        </div>
+        <div id="caracteristicasHabilidades" class="caracteristicasHabilidades">
+            <textarea name="descricaoCaracteristicasHabilidades" id="descricaoCaracteristicasHabilidades"></textarea>
+        </div>
+        <div id="idiomasOutrasProficiencias" class="idiomasOutrasProficiencias">
+            <label for="idiomas" id="labelIdiomas">Idiomas</label>
+            <textarea name="idiomas" id="idiomas"></textarea>
+            <label for="outrasProficiencias" id="labelOutrasProficiencias">Outras Proficiências</label>
+            <textarea name="outrasProficiencias" id="outrasProficiencias"></textarea>
+        </div>
+        <img src="img/page_1.png" alt="">
+    </div>
+    <div class="page2">
+        <img src="img/page_2.png" alt="">
+    </div>
+
+    <div class="page3">
+        <img src="img/page_3.png" alt="">
+    </div>
+</body>
+
+</html>

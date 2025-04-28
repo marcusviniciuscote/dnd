@@ -1,0 +1,756 @@
+:root {
+    --corInput: black;
+    --corSpan: red;
+    --corTextArea: darkgray;
+}
+
+img {
+    position: relative;
+    z-index: -3;
+}
+
+input {
+    float: left;
+    position: absolute;
+    background: var(--corInput);
+    border: 0;
+    text-align: center;
+}
+
+select {
+    float: left;
+    position: absolute;
+}
+
+span {
+    float: left;
+    position: absolute;
+    background: var(--corSpan);
+    text-align: center;
+}
+
+textarea {
+    float: left;
+    position: absolute;
+    resize: none;
+    background: var(--corTextArea);
+    text-align: left;
+    font-size: 12pt;
+}
+
+label {
+    float: left;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+}
+
+.cabecalho input {
+    width: 250px;
+    height: 40px;
+}
+
+#nomePersonagem {
+    width: 400px;
+    margin-top: 175px;
+    margin-left: 200px;
+}
+
+#classePersonagem {
+    margin-top: 150px;
+    margin-left: 750px;
+}
+
+#nivelPersonagem {
+    width: 60px;
+    font-size: 40px;
+    margin-top: 130px;
+    margin-left: 940px;
+}
+
+#antecedente {
+    margin-top: 150px;
+    margin-left: 1065px;
+}
+
+#nomeJogador {
+    margin-top: 130px;
+    margin-left: 1335px;
+}
+
+#raca {
+    margin-top: 220px;
+    margin-left: 750px;
+}
+
+#tendencia {
+    margin-top: 220px;
+    margin-left: 1065px;
+}
+
+#pontosExperiencia {
+    margin-top: 203px;
+    margin-left: 1335px;
+}
+
+.atributos input {
+    width: 65px;
+    height: 65px;
+    margin-left: 123px;
+    font-size: 40px;
+}
+
+#forca {
+    margin-top: 435px;
+}
+
+#destreza {
+    margin-top: 635px;
+}
+
+#constituicao {
+    margin-top: 833px;
+}
+
+#inteligencia {
+    margin-top: 1030px;
+}
+
+#sabedoria {
+    margin-top: 1230px;
+}
+
+#carisma {
+    margin-top: 1430px;
+}
+
+
+.modificadores span {
+    width: 40px;
+    height: 40px;
+    margin-left: 139px;
+    font-size: 40px;
+}
+
+#modificadorForca {
+    margin-top: 516px;
+}
+
+#modificadorDestreza {
+    margin-top: 716px;
+}
+
+#modificadorConstituicao {
+    margin-top: 914px;
+}
+
+#modificadorInteligencia {
+    margin-top: 1113px;
+}
+
+#modificadorSabedoria {
+    margin-top: 1312px;
+}
+
+#modificadorCarisma {
+    margin-top: 1510px;
+}
+
+#sabedoriaPassiva {
+    margin-top: 1645px;
+    margin-left: 100px;
+}
+
+.inspiracaoProficiencia input,
+span {
+    width: 40px;
+    height: 40px;
+    margin-left: 275px;
+    font-size: 40px;
+}
+
+#inspiracao {
+    margin-top: 365px;
+}
+
+#bonusProficiencia {
+    margin-left: 280px;
+    margin-top: 470px;
+}
+
+.testeResistencia input {
+    margin-left: 283px;
+}
+
+#resistenciaForca {
+    margin-top: 580px;
+}
+
+#resistenciaDestreza {
+    margin-top: 618px;
+}
+
+#resistenciaConstituicao {
+    margin-top: 655px;
+}
+
+#resistenciaInteligencia {
+    margin-top: 692px;
+}
+
+#resistenciaSabedoria {
+    margin-top: 730px;
+}
+
+#resistenciaCarisma {
+    margin-top: 768px;
+}
+
+.testeResistencia span {
+    width: 20px;
+    height: 20px;
+    margin-left: 323px;
+    font-size: 20px;
+}
+
+#modificadorResistenciaForca {
+    margin-top: 575px;
+}
+
+#modificadorResistenciaDestreza {
+    margin-top: 612px;
+}
+
+#modificadorResistenciaConstituicao {
+    margin-top: 650px;
+}
+
+#modificadorResistenciaInteligencia {
+    margin-top: 687px;
+}
+
+#modificadorResistenciaSabedoria {
+    margin-top: 725px;
+}
+
+#modificadorResistenciaCarisma {
+    margin-top: 762px;
+}
+
+.pericias input {
+    margin-left: 283px;
+}
+
+#periciaAcrobacia {
+    margin-top: 900px;
+}
+
+#periciaArcanismo {
+    margin-top: 938px;
+}
+
+#periciaAtletismo {
+    margin-top: 975px;
+}
+
+#periciaAtuacao {
+    margin-top: 1013px;
+}
+
+#periciaBlefar {
+    margin-top: 1050px;
+}
+
+#periciaFurtividade {
+    margin-top: 1088px;
+}
+
+#periciaHistoria {
+    margin-top: 1125px;
+}
+
+#periciaIntimidacao {
+    margin-top: 1163px;
+}
+
+#periciaIntuicao {
+    margin-top: 1200px;
+}
+
+#periciaInvestigacao {
+    margin-top: 1238px;
+}
+
+#periciaLidarComAnimais {
+    margin-top: 1275px;
+}
+
+#periciaMedicina {
+    margin-top: 1313px;
+}
+
+#periciaNatureza {
+    margin-top: 1350px;
+}
+
+#periciaPercepcao {
+    margin-top: 1388px;
+}
+
+#periciaPersuasao {
+    margin-top: 1425px;
+}
+
+#periciaPrestidigitacao {
+    margin-top: 1463px;
+}
+
+#periciaReligiao {
+    margin-top: 1500px;
+}
+
+#periciaSobrevivencia {
+    margin-top: 1538px;
+}
+
+.pericias span {
+    width: 20px;
+    height: 20px;
+    margin-left: 321px;
+    font-size: 20px;
+}
+
+#modificadorPericiaAcrobacia {
+    margin-top: 896px;
+
+}
+
+#modificadorPericiaArcanismo {
+    margin-top: 933px;
+}
+
+#modificadorPericiaAtletismo {
+    margin-top: 970px;
+}
+
+#modificadorPericiaAtuacao {
+    margin-top: 1008px;
+}
+
+#modificadorPericiaBlefar {
+    margin-top: 1045px;
+}
+
+#modificadorPericiaFurtividade {
+    margin-top: 1083px;
+}
+
+#modificadorPericiaHistoria {
+    margin-top: 1120px;
+}
+
+#modificadorPericiaIntimidacao {
+    margin-top: 1157px;
+}
+
+#modificadorPericiaIntuicao {
+    margin-top: 1195px;
+}
+
+#modificadorPericiaInvestigacao {
+    margin-top: 1233px;
+}
+
+#modificadorPericiaLidarComAnimais {
+    margin-top: 1270px;
+}
+
+#modificadorPericiaMedicina {
+    margin-top: 1308px;
+}
+
+#modificadorPericiaNatureza {
+    margin-top: 1345px;
+}
+
+#modificadorPericiaPercepcao {
+    margin-top: 1383px;
+}
+
+#modificadorPericiaPersuasao {
+    margin-top: 1420px;
+}
+
+#modificadorPericiaPrestidigitacao {
+    margin-top: 1458px;
+}
+
+#modificadorPericiaReligiao {
+    margin-top: 1495px;
+}
+
+#modificadorPericiaSobrevivencia {
+    margin-top: 1533px;
+}
+
+.classeArmaduraIniciativaDeslocamento span {
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+    margin-top: 396px;
+}
+
+#classeArmadura {
+    margin-left: 658px;
+}
+
+#iniciativa {
+    margin-left: 812px;
+}
+
+#deslocamento {
+    margin-left: 975px;
+}
+
+.vida span {
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.vida input {
+    width: 380px;
+    height: 80px;
+    font-size: 80px;
+    margin-left: 660px;
+}
+
+#pontosDeVidaTotais {
+    margin-left: 900px;
+    margin-top: 550px;
+}
+
+#pontosDeVidaAtuais {
+    margin-top: 590px;
+}
+
+#pontosDeVidaTemporarios {
+    margin-top: 735px;
+}
+
+#totalDadosDeVida {
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+    margin-left: 725px;
+    margin-top: 888px;
+}
+
+#dadosDeVida {
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+    margin-left: 700px;
+    margin-top: 920px;
+}
+
+.testeContraMorte input {
+    width: 18px;
+}
+
+.testeContraMorteSucesso input {
+    margin-top: 868px;
+}
+
+.testeContraMorteFracasso input {
+    margin-top: 910px;
+}
+
+#primeiroSucesso {
+    margin-left: 965px;
+}
+
+#segundoSucesso {
+    margin-left: 1000px;
+}
+
+#terceiroSucesso {
+    margin-left: 1036px;
+}
+
+#primeiroFracasso {
+    margin-left: 965px;
+}
+
+#segundoFracasso {
+    margin-left: 1000px;
+}
+
+#terceiroFracasso {
+    margin-left: 1036px;
+}
+
+.ataquesMagiasArmaduras input {
+    margin-top: 1090px;
+}
+
+#nomeAtaqueMagiaArmadura input {
+    width: 180px;
+    height: 40px;
+    margin-left: 620px;
+}
+
+#nomeArmadura {
+    margin-top: 1090px;
+}
+
+#nomeEscudo {
+    margin-top: 1145px;
+}
+
+#nomeItemMaoDireita {
+    margin-top: 1200px;
+}
+
+#nomeItemMaoEsquerda {
+    margin-top: 1255px;
+}
+
+#nomeItemSegundarioMaoDireita {
+    margin-top: 1310px;
+}
+
+#nomeItemSecundarioMaoEsquerda {
+    margin-top: 1365px;
+}
+
+#nomeItemMagicoMaoDireita {
+    margin-top: 1420px;
+}
+
+#nomeItemMagicoMaoEsquerda {
+    margin-top: 1475px;
+}
+
+#nomeItemExtra {
+    margin-top: 1530px;
+}
+
+#bonusAtaqueMagiaArmadura input {
+    width: 80px;
+    height: 40px;
+    margin-left: 820px;
+}
+
+#bonusArmadura {
+    margin-top: 1090px;
+}
+
+#bonusEscudo {
+    margin-top: 1145px;
+}
+
+#bonusItemMaoDireita {
+    margin-top: 1200px;
+}
+
+#bonusItemMaoEsquerda {
+    margin-top: 1255px;
+}
+
+#bonusItemSegundarioMaoDireita {
+    margin-top: 1310px;
+}
+
+#bonusItemSecundarioMaoEsquerda {
+    margin-top: 1365px;
+}
+
+#bonusItemMagicoMaoDireita {
+    margin-top: 1420px;
+}
+
+#bonusItemMagicoMaoEsquerda {
+    margin-top: 1475px;
+}
+
+#bonusItemExtra {
+    margin-top: 1530px;
+}
+
+#danoAtaqueMagiaArmadura input {
+    width: 60px;
+    height: 40px;
+    margin-left: 920px;
+}
+
+#danoArmadura {
+    margin-top: 1090px;
+}
+
+#danoEscudo {
+    margin-top: 1145px;
+}
+
+#danoItemMaoDireita {
+    margin-top: 1200px;
+}
+
+#danoItemMaoEsquerda {
+    margin-top: 1255px;
+}
+
+#danoItemSegundarioMaoDireita {
+    margin-top: 1310px;
+}
+
+#danoItemSecundarioMaoEsquerda {
+    margin-top: 1365px;
+}
+
+#danoItemMagicoMaoDireita {
+    margin-top: 1420px;
+}
+
+#danoItemMagicoMaoEsquerda {
+    margin-top: 1475px;
+}
+
+#danoItemExtra {
+    margin-top: 1530px;
+}
+
+#tipoDanoAtaqueMagiaArmadura input {
+    width: 80px;
+    height: 40px;
+    margin-left: 990px;
+}
+
+#tipoDanoArmadura {
+    margin-top: 1090px;
+}
+
+#tipoDanoEscudo {
+    margin-top: 1145px;
+}
+
+#tipoDanoItemMaoDireita {
+    margin-top: 1200px;
+}
+
+#tipoDanoItemMaoEsquerda {
+    margin-top: 1255px;
+}
+
+#tipoDanoItemSegundarioMaoDireita {
+    margin-top: 1310px;
+}
+
+#tipoDanoItemSecundarioMaoEsquerda {
+    margin-top: 1365px;
+}
+
+#tipoDanoItemMagicoMaoDireita {
+    margin-top: 1420px;
+}
+
+#tipoDanoItemMagicoMaoEsquerda {
+    margin-top: 1475px;
+}
+
+#tipoDanoItemExtra {
+    margin-top: 1530px;
+}
+
+.dinheiro input {
+    width: 70px;
+    height: 40px;
+    font-size: 40px;
+    margin-left: 640px;
+}
+
+#pecasCobre {
+    margin-top: 1666px;
+}
+
+#pecasPrata {
+    margin-top: 1740px;
+}
+
+#pecasElectro {
+    margin-top: 1810px;
+}
+
+#pecasOuro {
+    margin-top: 1883px;
+}
+
+#pecasPlatina {
+    margin-top: 1955px;
+}
+
+#equipamentosItens {
+    width: 320px;
+    height: 440px;
+    margin-left: 750px;
+    margin-top: 1650px;
+}
+
+.antecedentes textarea {
+    width: 400px;
+    height: 90px;
+    margin-left: 1173px;
+}
+
+#tracosPersonalidade {
+    margin-top: 390px;
+    height: 120px;
+}
+
+#ideais {
+    margin-top: 580px;
+}
+
+#ligacoes {
+    margin-top: 735px;
+}
+
+#defeitos {
+    margin-top: 885px;
+}
+
+.caracteristicasHabilidades textarea {
+    width: 400px;
+    margin-left: 1173px;
+}
+
+#descricaoCaracteristicasHabilidades {
+    margin-top: 1090px;
+    height: 990px;
+}
+
+.idiomasOutrasProficiencias textarea {
+    width: 445px;
+    margin-left: 100px;
+    margin-top: 1750px;
+}
+
+#idiomas {
+    height: 80px;
+    margin-top: 1800px;
+}
+
+#outrasProficiencias {
+    height: 130px;
+    margin-top: 1950px;
+}
+
+#labelIdiomas {
+    margin-left: 280px;
+    margin-top: 1760px;
+}
+
+#labelOutrasProficiencias {
+    margin-left: 230px;
+    margin-top: 1910px;
+}
