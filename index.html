@@ -10,6 +10,7 @@
 
 <body>
     <div class="page1">
+        <!-- CABEÇALHO -->
         <div id="cabecalho" class="cabecalho">
             <input type="text" name="nomePersonagem" id="nomePersonagem">
             <select name="classePersonagem" id="classePersonagem" class="classePersonagem">
@@ -37,7 +38,6 @@
                 <option value="8"></option>
                 <option value="9"></option>
             </select>
-
             <input type="text" name="nomeJogador" id="nomeJogador">
             <select name="raca" id="raca" class="raca">
                 <option value="0"></option>
@@ -65,14 +65,16 @@
             </select>
             <input type="text" name="pontosExperiencia" id="pontosExperiencia">
         </div>
+        <!-- ATRIBUTOS -->
         <div id="atributos" class="atributos">
             <input type="text" name="forca" id="forca" onchange="principal()">
-            <input type="text" name="destreza" id="destreza">
-            <input type="text" name="constituicao" id="constituicao">
-            <input type="text" name="inteligencia" id="inteligencia">
-            <input type="text" name="sabedoria" id="sabedoria">
-            <input type="text" name="carisma" id="carisma">
+            <input type="text" name="destreza" id="destreza" onchange="principal()">
+            <input type="text" name="constituicao" id="constituicao" onchange="principal()">
+            <input type="text" name="inteligencia" id="inteligencia" onchange="principal()">
+            <input type="text" name="sabedoria" id="sabedoria" onchange="principal()">
+            <input type="text" name="carisma" id="carisma" onchange="principal()">
         </div>
+        <!-- MODIFICADORES -->
         <div id="modificadores" class="modificadores">
             <span id="modificadorForca"></span>
             <span id="modificadorDestreza">1</span>
@@ -82,10 +84,12 @@
             <span id="modificadorCarisma">1</span>
             <span id="sabedoriaPassiva">1</span> <!-- Baseado na percepção -->
         </div>
+        <!-- INSPIRAÇÃO E BÔNUS DE PROFICIÊNCIA -->
         <div id="inspiracaoProficiencia" class="inspiracaoProficiencia">
             <input type="text" name="inspiracao" id="inspiracao">
             <span id="bonusProficiencia">1</span><!-- De acordo com o nível -->
         </div>
+        <!-- TESTE DE RESISTÊNCIA -->
         <div id="testeResistencia" class="testeResistencia">
             <input type="checkbox" name="resistenciaForca" id="resistenciaForca">
             <span id="modificadorResistenciaForca">1</span>
@@ -100,6 +104,7 @@
             <input type="checkbox" name="resistenciaCarisma" id="resistenciaCarisma">
             <span id="modificadorResistenciaCarisma">1</span>
         </div>
+        <!-- PERÍCIAS -->
         <div id="pericias" class="pericias">
             <input type="checkbox" name="periciaAcrobacia" id="periciaAcrobacia">
             <span id="modificadorPericiaAcrobacia">1</span>
@@ -138,11 +143,13 @@
             <input type="checkbox" name="periciaSobrevivencia" id="periciaSobrevivencia">
             <span id="modificadorPericiaSobrevivencia">1</span>
         </div>
+        <!-- CLASSE DE ARMADURA, INICIATIVA E DELOCAMENTO -->
         <div id="classeArmaduraIniciativaDeslocamento" class="classeArmaduraIniciativaDeslocamento">
             <span id="classeArmadura">1</span>
             <span id="iniciativa">1</span>
             <span id="deslocamento">1</span>
         </div>
+        <!-- VIDA -->
         <div id="vida" class="vida">
             <span id="pontosDeVidaTotais">1</span>
             <input type="text" name="pontosDeVidaAtuais" id="pontosDeVidaAtuais">
@@ -162,6 +169,7 @@
                 </div>
             </div>
         </div>
+        <!-- ARMADURAS, ATAQUES E MAGIAS -->
         <div id="ataquesMagiasArmaduras" class="ataquesMagiasArmaduras">
             <div id="nomeAtaqueMagiaArmadura" class="nomeAtaqueMagiaArmadura">
                 <input type="text" name="nomeArmadura" id="nomeArmadura" placeholder="Nome da armadura">
@@ -208,6 +216,7 @@
                 <input type="text" name="tipoDanoItemExtra" id="tipoDanoItemExtra" placeholder="Tipo de Dano do Item Extra">
             </div>
         </div>
+        <!-- EQUIPAMENTOS -->
         <div id="equipamentos" class="equipamentos">
             <div id="dinheiro" class="dinheiro">
                 <input type="text" name="pecasCobre" id="pecasCobre">
@@ -220,15 +229,18 @@
                 <textarea name="equipamentosItens" id="equipamentosItens"></textarea>
             </div>
         </div>
+        <!-- ANTECEDENTES -->
         <div id="antecedentes" class="antecedentes">
             <textarea name="tracosPersonalidade" id="tracosPersonalidade"></textarea>
             <textarea name="ideais" id="ideais"></textarea>
             <textarea name="ligacoes" id="ligacoes"></textarea>
             <textarea name="defeitos" id="defeitos"></textarea>
         </div>
+        <!-- CARACTERÍSTICAS E HABILIDADES -->
         <div id="caracteristicasHabilidades" class="caracteristicasHabilidades">
             <textarea name="descricaoCaracteristicasHabilidades" id="descricaoCaracteristicasHabilidades"></textarea>
         </div>
+        <!-- IDIOMAS E OUTRAS PROFICIÊNCIAS -->
         <div id="idiomasOutrasProficiencias" class="idiomasOutrasProficiencias">
             <label for="idiomas" id="labelIdiomas">Idiomas</label>
             <textarea name="idiomas" id="idiomas"></textarea>
