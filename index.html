@@ -66,7 +66,7 @@
             <input type="text" name="pontosExperiencia" id="pontosExperiencia">
         </div>
         <div id="atributos" class="atributos">
-            <input type="text" name="forca" id="forca">
+            <input type="text" name="forca" id="forca" onchange="principal()">
             <input type="text" name="destreza" id="destreza">
             <input type="text" name="constituicao" id="constituicao">
             <input type="text" name="inteligencia" id="inteligencia">
@@ -74,7 +74,7 @@
             <input type="text" name="carisma" id="carisma">
         </div>
         <div id="modificadores" class="modificadores">
-            <span id="modificadorForca">1</span>
+            <span id="modificadorForca"></span>
             <span id="modificadorDestreza">1</span>
             <span id="modificadorConstituicao">1</span>
             <span id="modificadorInteligencia">1</span>
@@ -244,6 +244,8 @@
     <div class="page3">
         <img src="img/page_3.png" alt="">
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
