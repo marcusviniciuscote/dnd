@@ -17,15 +17,15 @@ let pontosExperiencia = document.getElementById('pontosExperiencia')
 let nivelPersonagem = document.getElementById('nivelPersonagem')
 let bonusProficiencia = document.getElementById('bonusProficiencia')
 
-let classe = document.getElementById('classePersonagem')
-let classeSelect = classe.options
-let nomeClasseFinal
-let valorClasseFinal
-
 let raca = document.getElementById('raca')
 let racaSelect = raca.options
 let nomeRacaFinal
 let valorRacaFinal
+
+let classe = document.getElementById('classePersonagem')
+let classeSelect = classe.options
+let nomeClasseFinal
+let valorClasseFinal
 
 let antecedente = document.getElementById('antecedente')
 let antecedenteSelect = antecedente.options
@@ -36,6 +36,151 @@ let tendencia = document.getElementById('tendencia')
 let tendenciaSelect = tendencia.options
 let nomeTendenciaFinal
 let valorTendenciaFinal
+
+function escolherRaca() {
+
+    for (var i = 0; i < racaSelect.length; i++) {
+        if (racaSelect[i].selected) {
+            valorRacaFinal = racaSelect[i].value
+            nomeRacaFinal = racaSelect[i].text
+            break
+        }
+    }
+
+    /*
+    Anão da Colina
+    Anão da Montanha
+    Alto Elfo
+    Elfo da Floresta
+    Elfo Negro
+    Halfling Pés Leves
+    Halfling Robusto
+        
+    Humano
+        
+    Draconato
+        
+    Gnomo da Floresta
+        
+    Gnomo da Rochas
+        
+    Meio-Elfo
+        
+    Meio-Orc
+        
+    Tiefling
+        
+    */
+
+    switch (parseInt(valorRacaFinal)) {
+        case 0:
+            console.log(nomeRacaFinal)
+            break;
+        case 1:
+            console.log(nomeRacaFinal)
+            /* 
+            +2 constituição
+            +1 sabedoria
+            */
+            break;
+        case 2:
+            console.log(nomeRacaFinal)
+            /* 
+            +2 força
+            +2 constituição
+            */
+            break;
+        case 3:
+            console.log(nomeRacaFinal)
+            /* 
+            +2 destreza
+            +1 inteligência
+            */
+            break;
+        case 4:
+            console.log(nomeRacaFinal)
+            /*
+            +2 destreza
+            +1 sabedoria
+            */
+            break;
+        case 5:
+            console.log(nomeRacaFinal)
+            /*
+            +2 destreza
+            +1 carisma
+            */
+            break;
+        case 6:
+            console.log(nomeRacaFinal)
+            /*
+            +2 destreza
+            +1 carisma
+            */
+            break;
+        case 7:
+            console.log(nomeRacaFinal)
+            /*
+            +2 destreza
+            +1 constituição
+            */
+            break;
+        case 8:
+            console.log(nomeRacaFinal)
+            /*
+            +1 força
+            +1 destreza
+            +1 constituição
+            +1 inteligência
+            +1 sabedoria
+            +1 carisma
+            */
+            break;
+        case 9:
+            console.log(nomeRacaFinal)
+            /*
+            +2 força
+            +1 carisma
+            */
+            break;
+        case 10:
+            console.log(nomeRacaFinal)
+            /*
+            +1 destreza
+            +2 inteligência
+            */
+            break;
+        case 11:
+            console.log(nomeRacaFinal)
+            /*
+            +1 constituição
+            +2 inteligência
+            */
+            break;
+        case 12:
+            console.log(nomeRacaFinal)
+            /*
+            +2 carisma
+            */
+            break;
+        case 13:
+            console.log(nomeRacaFinal)
+            /*
+            +2 força
+            +1 constituição
+            */
+            break;
+        case 14:
+            console.log(nomeRacaFinal)
+            /*
+            +1 inteligência
+            +2 carisma
+            */
+            break;
+        default:
+            break;
+    }
+}
 
 function escolherClasse() {
 
@@ -90,67 +235,6 @@ function escolherClasse() {
             break;
     }
 
-}
-
-function escolherRaca() {
-
-    for (var i = 0; i < racaSelect.length; i++) {
-        if (racaSelect[i].selected) {
-            valorRacaFinal = racaSelect[i].value
-            nomeRacaFinal = racaSelect[i].text
-            break
-        }
-    }
-
-    switch (parseInt(valorRacaFinal)) {
-        case 0:
-            console.log(nomeRacaFinal)
-            break;
-        case 1:
-            console.log(nomeRacaFinal)
-            break;
-        case 2:
-            console.log(nomeRacaFinal)
-            break;
-        case 3:
-            console.log(nomeRacaFinal)
-            break;
-        case 4:
-            console.log(nomeRacaFinal)
-            break;
-        case 5:
-            console.log(nomeRacaFinal)
-            break;
-        case 6:
-            console.log(nomeRacaFinal)
-            break;
-        case 7:
-            console.log(nomeRacaFinal)
-            break;
-        case 8:
-            console.log(nomeRacaFinal)
-            break;
-        case 9:
-            console.log(nomeRacaFinal)
-            break;
-        case 10:
-            console.log(nomeRacaFinal)
-            break;
-        case 11:
-            console.log(nomeRacaFinal)
-            break;
-        case 12:
-            console.log(nomeRacaFinal)
-            break;
-        case 13:
-            console.log(nomeRacaFinal)
-            break;
-        case 14:
-            console.log(nomeRacaFinal)
-            break;
-        default:
-            break;
-    }
 }
 
 function escolherAntecedente() {
