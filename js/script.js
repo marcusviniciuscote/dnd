@@ -17,6 +17,262 @@ let pontosExperiencia = document.getElementById('pontosExperiencia')
 let nivelPersonagem = document.getElementById('nivelPersonagem')
 let bonusProficiencia = document.getElementById('bonusProficiencia')
 
+let classe = document.getElementById('classePersonagem')
+let classeSelect = classe.options
+let nomeClasseFinal
+let valorClasseFinal
+
+let raca = document.getElementById('raca')
+let racaSelect = raca.options
+let nomeRacaFinal
+let valorRacaFinal
+
+let antecedente = document.getElementById('antecedente')
+let antecedenteSelect = antecedente.options
+let nomeAntecedenteFinal
+let valorAntecedenteFinal
+
+let tendencia = document.getElementById('tendencia')
+let tendenciaSelect = tendencia.options
+let nomeTendenciaFinal
+let valorTendenciaFinal
+
+function escolherClasse() {
+
+    for (var i = 0; i < classeSelect.length; i++) {
+        if (classeSelect[i].selected) {
+            valorClasseFinal = classeSelect[i].value
+            nomeClasseFinal = classeSelect[i].text
+            break
+        }
+    }
+    switch (parseInt(valorClasseFinal)) {
+        case 0:
+            console.log(nomeClasseFinal)
+            break;
+        case 1:
+            console.log(nomeClasseFinal)
+            break;
+        case 2:
+            console.log(nomeClasseFinal)
+            break;
+        case 3:
+            console.log(nomeClasseFinal)
+            break;
+        case 4:
+            console.log(nomeClasseFinal)
+            break;
+        case 5:
+            console.log(nomeClasseFinal)
+            break;
+        case 6:
+            console.log(nomeClasseFinal)
+            break;
+        case 7:
+            console.log(nomeClasseFinal)
+            break;
+        case 8:
+            console.log(nomeClasseFinal)
+            break;
+        case 9:
+            console.log(nomeClasseFinal)
+            break;
+        case 10:
+            console.log(nomeClasseFinal)
+            break;
+        case 11:
+            console.log(nomeClasseFinal)
+            break;
+        case 12:
+            console.log(nomeClasseFinal)
+            break;
+        default:
+            break;
+    }
+
+}
+
+function escolherRaca() {
+
+    for (var i = 0; i < racaSelect.length; i++) {
+        if (racaSelect[i].selected) {
+            valorRacaFinal = racaSelect[i].value
+            nomeRacaFinal = racaSelect[i].text
+            break
+        }
+    }
+
+    switch (parseInt(valorRacaFinal)) {
+        case 0:
+            console.log(nomeRacaFinal)
+            break;
+        case 1:
+            console.log(nomeRacaFinal)
+            break;
+        case 2:
+            console.log(nomeRacaFinal)
+            break;
+        case 3:
+            console.log(nomeRacaFinal)
+            break;
+        case 4:
+            console.log(nomeRacaFinal)
+            break;
+        case 5:
+            console.log(nomeRacaFinal)
+            break;
+        case 6:
+            console.log(nomeRacaFinal)
+            break;
+        case 7:
+            console.log(nomeRacaFinal)
+            break;
+        case 8:
+            console.log(nomeRacaFinal)
+            break;
+        case 9:
+            console.log(nomeRacaFinal)
+            break;
+        case 10:
+            console.log(nomeRacaFinal)
+            break;
+        case 11:
+            console.log(nomeRacaFinal)
+            break;
+        case 12:
+            console.log(nomeRacaFinal)
+            break;
+        case 13:
+            console.log(nomeRacaFinal)
+            break;
+        case 14:
+            console.log(nomeRacaFinal)
+            break;
+        default:
+            break;
+    }
+}
+
+function escolherAntecedente() {
+
+    for (var i = 0; i < antecedenteSelect.length; i++) {
+        if (antecedenteSelect[i].selected) {
+            valorAntecedenteFinal = antecedenteSelect[i].value
+            nomeAntecedenteFinal = antecedenteSelect[i].text
+            break
+        }
+    }
+
+    switch (parseInt(valorAntecedenteFinal)) {
+        case 0:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 1:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 2:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 3:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 4:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 5:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 6:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 7:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 8:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 9:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 10:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 11:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 12:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 13:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 14:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 15:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 16:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 17:
+            console.log(nomeAntecedenteFinal)
+            break;
+        case 18:
+            console.log(nomeAntecedenteFinal)
+            break;
+        default:
+            break;
+    }
+}
+
+function escolherTendencia() {
+
+    for (var i = 0; i < tendenciaSelect.length; i++) {
+        if (tendenciaSelect[i].selected) {
+            valorTendenciaFinal = tendenciaSelect[i].value
+            nomeTendenciaFinal = tendenciaSelect[i].text
+            break
+        }
+    }
+
+    switch (parseInt(valorTendenciaFinal)) {
+        case 0:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 1:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 2:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 3:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 4:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 5:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 6:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 7:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 8:
+            console.log(nomeTendenciaFinal)
+            break;
+        case 9:
+            console.log(nomeTendenciaFinal)
+            break;
+        default:
+            break;
+    }
+}
+
+
 function calcularModificador(valorAtributo, valorModificador) {
     switch (parseInt(valorAtributo)) {
         case 1:
@@ -89,6 +345,8 @@ function calcularModificador(valorAtributo, valorModificador) {
 
 function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusProficiencia) {
     let novoPontosExperiencia = parseInt(valorPontosExperiencia)
+    let novoNivel = 0
+    let novoBonusProficiencia = 0
 
     if (novoPontosExperiencia >= 0 && novoPontosExperiencia <= 299) {
         novoNivel = 1
@@ -170,7 +428,7 @@ function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusP
         novoNivel = 20
         novoBonusProficiencia = 6
     }
-    else {"Digite um número válido!"}
+    else { "Digite um número válido!" }
 
     valorNivelPersonagem.innerHTML = novoNivel
     valorBonusProficiencia.innerHTML = novoBonusProficiencia
@@ -178,6 +436,9 @@ function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusP
 }
 
 function principal() {
+
+    escolherClasse()
+    escolherRaca()
 
     calcularModificador(valorForca.value, valorModificadorForca)
     calcularModificador(valorDestreza.value, valorModificadorDestreza)
@@ -187,5 +448,9 @@ function principal() {
     calcularModificador(valorCarisma.value, valorModificadorCarisma)
 
     calcularNivel(pontosExperiencia.value, nivelPersonagem, bonusProficiencia)
+
+    /*     console.log(classe)
+        console.log(classeSelect)
+        console.log(valorClasseFinal) */
 
 }

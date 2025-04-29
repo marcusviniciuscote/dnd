@@ -15,7 +15,7 @@
             <!-- NOME DO PERSONAGEM -->
             <input type="text" name="nomePersonagem" id="nomePersonagem">
             <!-- CLASSES -->
-            <select name="classePersonagem" id="classePersonagem" class="classePersonagem">
+            <select name="classePersonagem" id="classePersonagem" class="classePersonagem" onchange="escolherClasse()">
                 <option value="0">Escolha sua Classe</option>
                 <option value="1">Bárbaro</option>
                 <option value="2">Bardo</option>
@@ -33,7 +33,7 @@
             <!-- NÍVEL DO PERSONAGEM -->
             <span id="nivelPersonagem"></span>
             <!-- ANTECEDENTES -->
-            <select name="antecedente" id="antecedente" class="antecedente">
+            <select name="antecedente" id="antecedente" class="antecedente" onchange="escolherAntecedente()">
                 <option value="0">Escolha seu Antecedente</option>
                 <option value="1">Acólito</option>
                 <option value="2">Artesão de Guilda</option>
@@ -57,20 +57,25 @@
             <!-- NOME DO JOGADOR -->
             <input type="text" name="nomeJogador" id="nomeJogador">
             <!-- RAÇAS -->
-            <select name="raca" id="raca" class="raca">
+            <select name="raca" id="raca" class="raca" onchange="escolherRaca()">
                 <option value="0">Escolha uma Raça</option>
-                <option value="1">Anão</option>
-                <option value="2">Elfo</option>
-                <option value="3">Halfling</option>
-                <option value="4">Humano</option>
-                <option value="5">Draconato</option>
-                <option value="6">Gnomo</option>
-                <option value="7">Meio-Elfo</option>
-                <option value="8">Meio-Orc</option>
-                <option value="9">Tiefling</option>
+                <option value="1">Anão da Colina</option>
+                <option value="2">Anão da Montanha</option>
+                <option value="3">Alto Elfo</option>
+                <option value="4">Elfo da Floresta</option>
+                <option value="5">Elfo Negro</option>
+                <option value="6">Halfling Pés Leves</option>
+                <option value="7">Halfling Robusto</option>
+                <option value="8">Humano</option>
+                <option value="9">Draconato</option>
+                <option value="10">Gnomo da Floresta</option>
+                <option value="11">Gnomo da Rochas</option>
+                <option value="12">Meio-Elfo</option>
+                <option value="13">Meio-Orc</option>
+                <option value="14">Tiefling</option>
             </select>
             <!-- TENDÊNCIAS -->
-            <select name="tendencia" id="tendencia" class="tendencia">
+            <select name="tendencia" id="tendencia" class="tendencia" onchange="escolherTendencia()">
                 <option value="0">Escolha sua Tendência</option>
                 <option value="1">Leal e Bom</option>
                 <option value="2">Neutro e Bom</option>
