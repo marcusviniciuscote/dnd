@@ -37,97 +37,63 @@ let tendenciaSelect = tendencia.options
 let nomeTendenciaFinal
 let valorTendenciaFinal
 
-function escolherRaca() {
-
-    for (var i = 0; i < racaSelect.length; i++) {
-        if (racaSelect[i].selected) {
-            valorRacaFinal = racaSelect[i].value
-            nomeRacaFinal = racaSelect[i].text
-            break
-        }
-    }
-
-    /*
-    Anão da Colina
-    Anão da Montanha
-    Alto Elfo
-    Elfo da Floresta
-    Elfo Negro
-    Halfling Pés Leves
-    Halfling Robusto
-        
-    Humano
-        
-    Draconato
-        
-    Gnomo da Floresta
-        
-    Gnomo da Rochas
-        
-    Meio-Elfo
-        
-    Meio-Orc
-        
-    Tiefling
-        
-    */
-
+function escolherRaca(valorRacaFinal, nomeRacaFinal) {
     switch (parseInt(valorRacaFinal)) {
         case 0:
             console.log(nomeRacaFinal)
             break;
         case 1:
             console.log(nomeRacaFinal)
-            /* 
+            /* Anão da Colina
             +2 constituição
             +1 sabedoria
             */
             break;
         case 2:
             console.log(nomeRacaFinal)
-            /* 
+            /* Anão da Montanha
             +2 força
             +2 constituição
             */
             break;
         case 3:
             console.log(nomeRacaFinal)
-            /* 
+            /* Alto Elfo
             +2 destreza
             +1 inteligência
             */
             break;
         case 4:
             console.log(nomeRacaFinal)
-            /*
+            /*Elfo da Floresta
             +2 destreza
             +1 sabedoria
             */
             break;
         case 5:
             console.log(nomeRacaFinal)
-            /*
+            /*Elfo Negro
             +2 destreza
             +1 carisma
             */
             break;
         case 6:
             console.log(nomeRacaFinal)
-            /*
+            /*Halfling Pés Leves
             +2 destreza
             +1 carisma
             */
             break;
         case 7:
             console.log(nomeRacaFinal)
-            /*
+            /*Halfling Robusto
             +2 destreza
             +1 constituição
             */
             break;
         case 8:
             console.log(nomeRacaFinal)
-            /*
+            /*Humano
             +1 força
             +1 destreza
             +1 constituição
@@ -138,41 +104,41 @@ function escolherRaca() {
             break;
         case 9:
             console.log(nomeRacaFinal)
-            /*
+            /*Draconato
             +2 força
             +1 carisma
             */
             break;
         case 10:
             console.log(nomeRacaFinal)
-            /*
+            /*Gnomo da Floresta
             +1 destreza
             +2 inteligência
             */
             break;
         case 11:
             console.log(nomeRacaFinal)
-            /*
+            /*Gnomo da Rochas
             +1 constituição
             +2 inteligência
             */
             break;
         case 12:
             console.log(nomeRacaFinal)
-            /*
+            /*Meio-Elfo
             +2 carisma
             */
             break;
         case 13:
             console.log(nomeRacaFinal)
-            /*
+            /*Meio-Orc
             +2 força
             +1 constituição
             */
             break;
         case 14:
             console.log(nomeRacaFinal)
-            /*
+            /*Tiefling
             +1 inteligência
             +2 carisma
             */
@@ -182,24 +148,24 @@ function escolherRaca() {
     }
 }
 
-function escolherClasse() {
-
-    for (var i = 0; i < classeSelect.length; i++) {
-        if (classeSelect[i].selected) {
-            valorClasseFinal = classeSelect[i].value
-            nomeClasseFinal = classeSelect[i].text
-            break
-        }
-    }
+function escolherClasse(valorClasseFinal, nomeClasseFinal) {
     switch (parseInt(valorClasseFinal)) {
         case 0:
             console.log(nomeClasseFinal)
             break;
         case 1:
             console.log(nomeClasseFinal)
+            desmarcarResistencias()
+
+            resistencias = ['resistenciaForca', 'resistenciaConstituicao']
+            modificadoresResistencia = ['modificadorResistenciaForca', 'modificadorResistenciaConstituicao']
+
+            marcarResistencias(resistencias)
+            alterarModificadorResistencia(modificadoresResistencia)
             break;
         case 2:
             console.log(nomeClasseFinal)
+            desmarcarResistencias()
             break;
         case 3:
             console.log(nomeClasseFinal)
@@ -237,16 +203,7 @@ function escolherClasse() {
 
 }
 
-function escolherAntecedente() {
-
-    for (var i = 0; i < antecedenteSelect.length; i++) {
-        if (antecedenteSelect[i].selected) {
-            valorAntecedenteFinal = antecedenteSelect[i].value
-            nomeAntecedenteFinal = antecedenteSelect[i].text
-            break
-        }
-    }
-
+function escolherAntecedente(valorAntecedenteFinal, nomeAntecedenteFinal) {
     switch (parseInt(valorAntecedenteFinal)) {
         case 0:
             console.log(nomeAntecedenteFinal)
@@ -310,16 +267,7 @@ function escolherAntecedente() {
     }
 }
 
-function escolherTendencia() {
-
-    for (var i = 0; i < tendenciaSelect.length; i++) {
-        if (tendenciaSelect[i].selected) {
-            valorTendenciaFinal = tendenciaSelect[i].value
-            nomeTendenciaFinal = tendenciaSelect[i].text
-            break
-        }
-    }
-
+function escolherTendencia(valorTendenciaFinal, nomeTendenciaFinal) {
     switch (parseInt(valorTendenciaFinal)) {
         case 0:
             console.log(nomeTendenciaFinal)
@@ -356,8 +304,7 @@ function escolherTendencia() {
     }
 }
 
-
-function calcularModificador(valorAtributo, valorModificador) {
+function calcularModificador(valorAtributo, valorModificador, valorModificadorResistencia) {
     switch (parseInt(valorAtributo)) {
         case 1:
             novoValorModificador = -5
@@ -425,6 +372,7 @@ function calcularModificador(valorAtributo, valorModificador) {
             novoValorModificador = 0
     }
     valorModificador.innerHTML = parseFloat(novoValorModificador)
+    valorModificadorResistencia.innerHTML = parseFloat(novoValorModificador)
 }
 
 function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusProficiencia) {
@@ -516,25 +464,77 @@ function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusP
 
     valorNivelPersonagem.innerHTML = novoNivel
     valorBonusProficiencia.innerHTML = novoBonusProficiencia
+}
+
+function equipamentosArmasArmaduras(nomeEquipamento = null, bonusEquipamento = null, danoEquipamento = null, tipoDanoEquipamento = null) {
+    console.log([nomeEquipamento, bonusEquipamento, danoEquipamento, tipoDanoEquipamento])
+}
+
+function testeResistencia(resistenciaProficiencia, modificadorResistencia) {
+    //let resistenciaBonusProficiencia = document.getElementById('bonusProficiencia').innerHTML
+    if (resistenciaProficiencia.checked = true) {
+        console.log(modificadorResistencia)
+        /* valorFinalResistencia = parseInt(resistenciaBonusProficiencia)
+        modificadorResistencia.innerHTML = parseInt(valorFinalResistencia) */
+        console.log("Foi")
+    }
+    else {
+        console.log("Errado")
+    }
+}
+
+function desmarcarResistencias() {
+    idModificadores = ['modificadorForca', 'modificadorDestreza', 'modificadorConstituicao', 'modificadorInteligencia', 'modificadorSabedoria', 'modificadorCarisma']
+    idResistencia = ['resistenciaForca', 'resistenciaDestreza', 'resistenciaConstituicao', 'resistenciaInteligencia', 'resistenciaSabedoria', 'resistenciaCarisma']
+    idModificadoresResistencia = ['modificadorResistenciaForca', 'modificadorResistenciaDestreza', 'modificadorResistenciaConstituicao', 'modificadorResistenciaInteligencia', 'modificadorResistenciaSabedoria', 'modificadorResistenciaCarisma']
+
+    idResistencia.forEach(element => {
+        testeResistencia = document.getElementById(element)
+        if (testeResistencia.checked = true) {
+            testeResistencia.checked = false
+            index = idResistencia.indexOf(element)
+            document.getElementById(idModificadoresResistencia[index]).innerHTML = document.getElementById(idModificadores[index]).innerText
+        } else {
+            console.log("Todas estão desmarcadas")
+        }
+    });
+}
+
+function marcarResistencias(resistencias) {
+    idResistencia = resistencias
+
+    idResistencia.forEach(element => {
+        testeResistencia = document.getElementById(element)
+        testeResistencia.checked = true
+    });
+}
+
+function alterarModificadorResistencia(modificadoresResistencia) {
+    let novoValorModificadorResistencia = document.getElementById('bonusProficiencia').innerText
+    idModificadoresResistencia = modificadoresResistencia
+    idModificadoresResistencia.forEach(element => {
+        if (testeResistencia.checked = true) {
+            testeResistencia = document.getElementById(element)
+
+            valorFinalResitencia = parseInt(testeResistencia.innerText) + parseInt(novoValorModificadorResistencia)
+
+            testeResistencia.innerHTML = valorFinalResitencia
+            if (document.getElementById('forca').innerHTML === "") {
+                alert('Preencha quantos pontos de experiência tem o personagem!')
+            }
+        } else {
+            console.log("Erro marcar resistencias")
+        }
+    });
 
 }
+
+
 
 function principal() {
 
-    escolherClasse()
-    escolherRaca()
 
-    calcularModificador(valorForca.value, valorModificadorForca)
-    calcularModificador(valorDestreza.value, valorModificadorDestreza)
-    calcularModificador(valorConstituicao.value, valorModificadorConstituicao)
-    calcularModificador(valorInteligencia.value, valorModificadorInteligencia)
-    calcularModificador(valorSabedoria.value, valorModificadorSabedoria)
-    calcularModificador(valorCarisma.value, valorModificadorCarisma)
-
-    calcularNivel(pontosExperiencia.value, nivelPersonagem, bonusProficiencia)
-
-    /*     console.log(classe)
-        console.log(classeSelect)
-        console.log(valorClasseFinal) */
 
 }
+
+function prencerDadosFicha() {}

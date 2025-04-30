@@ -15,7 +15,8 @@
             <!-- NOME DO PERSONAGEM -->
             <input type="text" name="nomePersonagem" id="nomePersonagem">
             <!-- CLASSES -->
-            <select name="classePersonagem" id="classePersonagem" class="classePersonagem" onchange="escolherClasse()">
+            <select name="classePersonagem" id="classePersonagem" class="classePersonagem"
+                onchange="escolherClasse(this.value, this.options[this.selectedIndex].text)">
                 <option value="0">Escolha sua Classe</option>
                 <option value="1">Bárbaro</option>
                 <option value="2">Bardo</option>
@@ -33,7 +34,8 @@
             <!-- NÍVEL DO PERSONAGEM -->
             <span id="nivelPersonagem"></span>
             <!-- ANTECEDENTES -->
-            <select name="antecedente" id="antecedente" class="antecedente" onchange="escolherAntecedente()">
+            <select name="antecedente" id="antecedente" class="antecedente"
+                onchange="escolherAntecedente(this.value, this.options[this.selectedIndex].text)">
                 <option value="0">Escolha seu Antecedente</option>
                 <option value="1">Acólito</option>
                 <option value="2">Artesão de Guilda</option>
@@ -57,7 +59,8 @@
             <!-- NOME DO JOGADOR -->
             <input type="text" name="nomeJogador" id="nomeJogador">
             <!-- RAÇAS -->
-            <select name="raca" id="raca" class="raca" onchange="escolherRaca()">
+            <select name="raca" id="raca" class="raca"
+                onchange="escolherRaca(this.value, this.options[this.selectedIndex].text)">
                 <option value="0">Escolha uma Raça</option>
                 <option value="1">Anão da Colina</option>
                 <option value="2">Anão da Montanha</option>
@@ -75,7 +78,8 @@
                 <option value="14">Tiefling</option>
             </select>
             <!-- TENDÊNCIAS -->
-            <select name="tendencia" id="tendencia" class="tendencia" onchange="escolherTendencia()">
+            <select name="tendencia" id="tendencia" class="tendencia"
+                onchange="escolherTendencia(this.value, this.options[this.selectedIndex].text)">
                 <option value="0">Escolha sua Tendência</option>
                 <option value="1">Leal e Bom</option>
                 <option value="2">Neutro e Bom</option>
@@ -87,16 +91,23 @@
                 <option value="8">Neutro e Mau</option>
                 <option value="9">Caótico e Mau</option>
             </select>
-            <input type="text" name="pontosExperiencia" id="pontosExperiencia" onchange="principal()">
+            <input type="text" name="pontosExperiencia" id="pontosExperiencia"
+                onchange="calcularNivel(this.value, document.getElementById('nivelPersonagem'), document.getElementById('bonusProficiencia'))">
         </div>
         <!-- ATRIBUTOS -->
         <div id="atributos" class="atributos">
-            <input type="text" name="forca" id="forca" onchange="principal()">
-            <input type="text" name="destreza" id="destreza" onchange="principal()">
-            <input type="text" name="constituicao" id="constituicao" onchange="principal()">
-            <input type="text" name="inteligencia" id="inteligencia" onchange="principal()">
-            <input type="text" name="sabedoria" id="sabedoria" onchange="principal()">
-            <input type="text" name="carisma" id="carisma" onchange="principal()">
+            <input type="text" name="forca" id="forca"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorForca'), document.getElementById('modificadorResistenciaForca'))">
+            <input type="text" name="destreza" id="destreza"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorDestreza'), document.getElementById('modificadorResistenciaDestreza'))">
+            <input type="text" name="constituicao" id="constituicao"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorConstituicao'), document.getElementById('modificadorResistenciaConstituicao'))">
+            <input type="text" name="inteligencia" id="inteligencia"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorInteligencia'), document.getElementById('modificadorResistenciaInteligencia'))">
+            <input type="text" name="sabedoria" id="sabedoria"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorSabedoria'), document.getElementById('modificadorResistenciaSabedoria'))">
+            <input type="text" name="carisma" id="carisma"
+                onchange="calcularModificador(this.value, document.getElementById('modificadorCarisma'), document.getElementById('modificadorResistenciaCarisma'))">
         </div>
         <!-- MODIFICADORES -->
         <div id="modificadores" class="modificadores">
@@ -115,18 +126,18 @@
         </div>
         <!-- TESTE DE RESISTÊNCIA -->
         <div id="testeResistencia" class="testeResistencia">
-            <input type="checkbox" name="resistenciaForca" id="resistenciaForca">
-            <span id="modificadorResistenciaForca">1</span>
+            <input type="checkbox" name="resistenciaForca" id="resistenciaForca" >
+            <span id="modificadorResistenciaForca"></span>
             <input type="checkbox" name="resistenciaDestreza" id="resistenciaDestreza">
-            <span id="modificadorResistenciaDestreza">1</span>
+            <span id="modificadorResistenciaDestreza"></span>
             <input type="checkbox" name="resistenciaConstituicao" id="resistenciaConstituicao">
-            <span id="modificadorResistenciaConstituicao">1</span>
+            <span id="modificadorResistenciaConstituicao"></span>
             <input type="checkbox" name="resistenciaInteligencia" id="resistenciaInteligencia">
-            <span id="modificadorResistenciaInteligencia">1</span>
+            <span id="modificadorResistenciaInteligencia"></span>
             <input type="checkbox" name="resistenciaSabedoria" id="resistenciaSabedoria">
-            <span id="modificadorResistenciaSabedoria">1</span>
+            <span id="modificadorResistenciaSabedoria"></span>
             <input type="checkbox" name="resistenciaCarisma" id="resistenciaCarisma">
-            <span id="modificadorResistenciaCarisma">1</span>
+            <span id="modificadorResistenciaCarisma"></span>
         </div>
         <!-- PERÍCIAS -->
         <div id="pericias" class="pericias">
@@ -196,48 +207,107 @@
         <!-- ARMADURAS, ATAQUES E MAGIAS -->
         <div id="ataquesMagiasArmaduras" class="ataquesMagiasArmaduras">
             <div id="nomeAtaqueMagiaArmadura" class="nomeAtaqueMagiaArmadura">
-                <input type="text" name="nomeArmadura" id="nomeArmadura" placeholder="Nome da armadura">
-                <input type="text" name="nomeEscudo" id="nomeEscudo" placeholder="Escudo">
-                <input type="text" name="nomeItemMaoDireita" id="nomeItemMaoDireita" placeholder="Item Mão Direita">
-                <input type="text" name="nomeItemMaoEsquerda" id="nomeItemMaoEsquerda" placeholder="Item Mão Esquerda">
-                <input type="text" name="nomeItemSegundarioMaoDireita" id="nomeItemSegundarioMaoDireita" placeholder="Item Secundário Mão Direita">
-                <input type="text" name="nomeItemSecundarioMaoEsquerda" id="nomeItemSecundarioMaoEsquerda" placeholder="Item Secundário Mão Esquerda">
-                <input type="text" name="nomeItemMagicoMaoDireita" id="nomeItemMagicoMaoDireita" placeholder="Item Mágico Mão Direita">
-                <input type="text" name="nomeItemMagicoMaoEsquerda" id="nomeItemMagicoMaoEsquerda" placeholder="Item Mágico Mão Esquerda">
-                <input type="text" name="nomeItemExtra" id="nomeItemExtra" placeholder="Item Extra">
+                <input type="text" name="nomeArmadura" id="nomeArmadura" placeholder="Nome da armadura"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeArmadura').value, document.getElementById('bonusArmadura').value, document.getElementById('danoArmadura').value, document.getElementById('tipoDanoArmadura').value)">
+                <input type="text" name="nomeEscudo" id="nomeEscudo" placeholder="Escudo"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeEscudo').value, document.getElementById('bonusEscudo').value, document.getElementById('danoEscudo').value, document.getElementById('tipoDanoEscudo').value)">
+                <input type="text" name="nomeItemMaoDireita" id="nomeItemMaoDireita" placeholder="Item Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoDireita').value, document.getElementById('bonusItemMaoDireita').value, document.getElementById('danoItemMaoDireita').value, document.getElementById('tipoDanoItemMaoDireita').value)">
+                <input type="text" name="nomeItemMaoEsquerda" id="nomeItemMaoEsquerda" placeholder="Item Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoEsquerda').value, document.getElementById('bonusItemMaoEsquerda').value, document.getElementById('danoItemMaoEsquerda').value, document.getElementById('tipoDanoItemMaoEsquerda').value)">
+                <input type="text" name="nomeItemSegundarioMaoDireita" id="nomeItemSegundarioMaoDireita"
+                    placeholder="Item Secundário Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSegundarioMaoDireita').value, document.getElementById('bonusItemSegundarioMaoDireita').value, document.getElementById('danoItemSegundarioMaoDireita').value, document.getElementById('tipoDanoItemSegundarioMaoDireita').value)">
+                <input type="text" name="nomeItemSecundarioMaoEsquerda" id="nomeItemSecundarioMaoEsquerda"
+                    placeholder="Item Secundário Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSecundarioMaoEsquerda').value, document.getElementById('bonusItemSecundarioMaoEsquerda').value, document.getElementById('danoItemSecundarioMaoEsquerda').value, document.getElementById('tipoDanoItemSecundarioMaoEsquerda').value)">
+                <input type="text" name="nomeItemMagicoMaoDireita" id="nomeItemMagicoMaoDireita"
+                    placeholder="Item Mágico Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoDireita').value, document.getElementById('bonusItemMagicoMaoDireita').value, document.getElementById('danoItemMagicoMaoDireita').value, document.getElementById('tipoDanoItemMagicoMaoDireita').value)">
+                <input type="text" name="nomeItemMagicoMaoEsquerda" id="nomeItemMagicoMaoEsquerda"
+                    placeholder="Item Mágico Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoEsquerda').value, document.getElementById('bonusItemMagicoMaoEsquerda').value, document.getElementById('danoItemMagicoMaoEsquerda').value, document.getElementById('tipoDanoItemMagicoMaoEsquerda').value)">
+                <input type="text" name="nomeItemExtra" id="nomeItemExtra" placeholder="Item Extra"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemExtra').value, document.getElementById('bonusItemExtra').value, document.getElementById('danoItemExtra').value, document.getElementById('tipoDanoItemExtra').value)">
             </div>
             <div id="bonusAtaqueMagiaArmadura" class="bonusAtaqueMagiaArmadura">
-                <input type="text" name="bonusArmadura" id="bonusArmadura" placeholder="Bônus da armadura">
-                <input type="text" name="bonusEscudo" id="bonusEscudo" placeholder="Bônus de Escudo">
-                <input type="text" name="bonusItemMaoDireita" id="bonusItemMaoDireita" placeholder="Bônus do Item Mão Direita">
-                <input type="text" name="bonusItemMaoEsquerda" id="bonusItemMaoEsquerda" placeholder="Bônus do Item Mão Esquerda">
-                <input type="text" name="bonusItemSegundarioMaoDireita" id="bonusItemSegundarioMaoDireita" placeholder="Bônus do Item Secundário Mão Direita">
-                <input type="text" name="bonusItemSecundarioMaoEsquerda" id="bonusItemSecundarioMaoEsquerda" placeholder="Bônus do Item Secundário Mão Esquerda">
-                <input type="text" name="bonusItemMagicoMaoDireita" id="bonusItemMagicoMaoDireita" placeholder="Bônus do Item Mágico Mão Direita">
-                <input type="text" name="bonusItemMagicoMaoEsquerda" id="bonusItemMagicoMaoEsquerda" placeholder="Bônus do Item Mágico Mão Esquerda">
-                <input type="text" name="bonusItemExtra" id="bonusItemExtra" placeholder="Bônus do Item Extra">
+                <input type="text" name="bonusArmadura" id="bonusArmadura" placeholder="Bônus da armadura"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeArmadura').value, document.getElementById('bonusArmadura').value, document.getElementById('danoArmadura').value, document.getElementById('tipoDanoArmadura').value)">
+                <input type="text" name="bonusEscudo" id="bonusEscudo" placeholder="Bônus de Escudo"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeEscudo').value, document.getElementById('bonusEscudo').value, document.getElementById('danoEscudo').value, document.getElementById('tipoDanoEscudo').value)">
+                <input type="text" name="bonusItemMaoDireita" id="bonusItemMaoDireita"
+                    placeholder="Bônus do Item Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoDireita').value, document.getElementById('bonusItemMaoDireita').value, document.getElementById('danoItemMaoDireita').value, document.getElementById('tipoDanoItemMaoDireita').value)">
+                <input type="text" name="bonusItemMaoEsquerda" id="bonusItemMaoEsquerda"
+                    placeholder="Bônus do Item Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoEsquerda').value, document.getElementById('bonusItemMaoEsquerda').value, document.getElementById('danoItemMaoEsquerda').value, document.getElementById('tipoDanoItemMaoEsquerda').value)">
+                <input type="text" name="bonusItemSegundarioMaoDireita" id="bonusItemSegundarioMaoDireita"
+                    placeholder="Bônus do Item Secundário Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSegundarioMaoDireita').value, document.getElementById('bonusItemSegundarioMaoDireita').value, document.getElementById('danoItemSegundarioMaoDireita').value, document.getElementById('tipoDanoItemSegundarioMaoDireita').value)">
+                <input type="text" name="bonusItemSecundarioMaoEsquerda" id="bonusItemSecundarioMaoEsquerda"
+                    placeholder="Bônus do Item Secundário Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSecundarioMaoEsquerda').value, document.getElementById('bonusItemSecundarioMaoEsquerda').value, document.getElementById('danoItemSecundarioMaoEsquerda').value, document.getElementById('tipoDanoItemSecundarioMaoEsquerda').value)">
+                <input type="text" name="bonusItemMagicoMaoDireita" id="bonusItemMagicoMaoDireita"
+                    placeholder="Bônus do Item Mágico Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoDireita').value, document.getElementById('bonusItemMagicoMaoDireita').value, document.getElementById('danoItemMagicoMaoDireita').value, document.getElementById('tipoDanoItemMagicoMaoDireita').value)">
+                <input type="text" name="bonusItemMagicoMaoEsquerda" id="bonusItemMagicoMaoEsquerda"
+                    placeholder="Bônus do Item Mágico Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoEsquerda').value, document.getElementById('bonusItemMagicoMaoEsquerda').value, document.getElementById('danoItemMagicoMaoEsquerda').value, document.getElementById('tipoDanoItemMagicoMaoEsquerda').value)">
+                <input type="text" name="bonusItemExtra" id="bonusItemExtra" placeholder="Bônus do Item Extra"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemExtra').value, document.getElementById('bonusItemExtra').value, document.getElementById('danoItemExtra').value, document.getElementById('tipoDanoItemExtra').value)">
             </div>
             <div id="danoAtaqueMagiaArmadura" class="danoAtaqueMagiaArmadura">
-                <input type="text" name="danoArmadura" id="danoArmadura" placeholder="Dano da armadura">
-                <input type="text" name="danoEscudo" id="danoEscudo" placeholder="Dano do Escudo">
-                <input type="text" name="danoItemMaoDireita" id="danoItemMaoDireita" placeholder="Dano do Item Mão Direita">
-                <input type="text" name="danoItemMaoEsquerda" id="danoItemMaoEsquerda" placeholder="Dano do Item Mão Esquerda">
-                <input type="text" name="danoItemSegundarioMaoDireita" id="danoItemSegundarioMaoDireita" placeholder="Dano do Item Secundário Mão Direita">
-                <input type="text" name="danoItemSecundarioMaoEsquerda" id="danoItemSecundarioMaoEsquerda" placeholder="Dano do Item Secundário Mão Esquerda">
-                <input type="text" name="danoItemMagicoMaoDireita" id="danoItemMagicoMaoDireita" placeholder="Dano do Item Mágico Mão Direita">
-                <input type="text" name="danoItemMagicoMaoEsquerda" id="danoItemMagicoMaoEsquerda" placeholder="Dano do Item Mágico Mão Esquerda">
-                <input type="text" name="dnaoItemExtra" id="danoItemExtra" placeholder="Dano do Item Extra">
+                <input type="text" name="danoArmadura" id="danoArmadura" placeholder="Dano da armadura"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeArmadura').value, document.getElementById('bonusArmadura').value, document.getElementById('danoArmadura').value, document.getElementById('tipoDanoArmadura').value)">
+                <input type="text" name="danoEscudo" id="danoEscudo" placeholder="Dano do Escudo"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeEscudo').value, document.getElementById('bonusEscudo').value, document.getElementById('danoEscudo').value, document.getElementById('tipoDanoEscudo').value)">
+                <input type="text" name="danoItemMaoDireita" id="danoItemMaoDireita"
+                    placeholder="Dano do Item Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoDireita').value, document.getElementById('bonusItemMaoDireita').value, document.getElementById('danoItemMaoDireita').value, document.getElementById('tipoDanoItemMaoDireita').value)">
+                <input type="text" name="danoItemMaoEsquerda" id="danoItemMaoEsquerda"
+                    placeholder="Dano do Item Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoEsquerda').value, document.getElementById('bonusItemMaoEsquerda').value, document.getElementById('danoItemMaoEsquerda').value, document.getElementById('tipoDanoItemMaoEsquerda').value)">
+                <input type="text" name="danoItemSegundarioMaoDireita" id="danoItemSegundarioMaoDireita"
+                    placeholder="Dano do Item Secundário Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSegundarioMaoDireita').value, document.getElementById('bonusItemSegundarioMaoDireita').value, document.getElementById('danoItemSegundarioMaoDireita').value, document.getElementById('tipoDanoItemSegundarioMaoDireita').value)">
+                <input type="text" name="danoItemSecundarioMaoEsquerda" id="danoItemSecundarioMaoEsquerda"
+                    placeholder="Dano do Item Secundário Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSecundarioMaoEsquerda').value, document.getElementById('bonusItemSecundarioMaoEsquerda').value, document.getElementById('danoItemSecundarioMaoEsquerda').value, document.getElementById('tipoDanoItemSecundarioMaoEsquerda').value)">
+                <input type="text" name="danoItemMagicoMaoDireita" id="danoItemMagicoMaoDireita"
+                    placeholder="Dano do Item Mágico Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoDireita').value, document.getElementById('bonusItemMagicoMaoDireita').value, document.getElementById('danoItemMagicoMaoDireita').value, document.getElementById('tipoDanoItemMagicoMaoDireita').value)">
+                <input type="text" name="danoItemMagicoMaoEsquerda" id="danoItemMagicoMaoEsquerda"
+                    placeholder="Dano do Item Mágico Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoEsquerda').value, document.getElementById('bonusItemMagicoMaoEsquerda').value, document.getElementById('danoItemMagicoMaoEsquerda').value, document.getElementById('tipoDanoItemMagicoMaoEsquerda').value)">
+                <input type="text" name="dnaoItemExtra" id="danoItemExtra" placeholder="Dano do Item Extra"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemExtra').value, document.getElementById('bonusItemExtra').value, document.getElementById('danoItemExtra').value, document.getElementById('tipoDanoItemExtra').value)">
             </div>
             <div id="tipoDanoAtaqueMagiaArmadura" class="tipoDanoAtaqueMagiaArmadura">
-                <input type="text" name="tipoDanoArmadura" id="tipoDanoArmadura" placeholder="Tipo de dano da armadura">
-                <input type="text" name="tipoDanoEscudo" id="tipoDanoEscudo" placeholder="Tipo de dano do Escudo">
-                <input type="text" name="tipoDanoItemMaoDireita" id="tipoDanoItemMaoDireita" placeholder="Tipo de dano do Item Mão Direita">
-                <input type="text" name="tipoDanoItemMaoEsquerda" id="tipoDanoItemMaoEsquerda" placeholder="Tipo de dano do Item Mão Esquerda">
-                <input type="text" name="tipoDanoItemSegundarioMaoDireita" id="tipoDanoItemSegundarioMaoDireita" placeholder="Tipo de dano do Item Secundário Mão Direita">
-                <input type="text" name="tipoDanoItemSecundarioMaoEsquerda" id="tipoDanoItemSecundarioMaoEsquerda" placeholder="Tipo de dano do Item Secundário Mão Esquerda">
-                <input type="text" name="tipoDanoItemMagicoMaoDireita" id="tipoDanoItemMagicoMaoDireita" placeholder="Tipo de dano do Item Mágico Mão Direita">
-                <input type="text" name="tipoDanoItemMagicoMaoEsquerda" id="tipoDanoItemMagicoMaoEsquerda" placeholder="Tipo de dano do Item Mágico Mão Esquerda">
-                <input type="text" name="tipoDanoItemExtra" id="tipoDanoItemExtra" placeholder="Tipo de Dano do Item Extra">
+                <input type="text" name="tipoDanoArmadura" id="tipoDanoArmadura" placeholder="Tipo de dano da armadura"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeArmadura').value, document.getElementById('bonusArmadura').value, document.getElementById('danoArmadura').value, document.getElementById('tipoDanoArmadura').value)">
+                <input type="text" name="tipoDanoEscudo" id="tipoDanoEscudo" placeholder="Tipo de dano do Escudo"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeEscudo').value, document.getElementById('bonusEscudo').value, document.getElementById('danoEscudo').value, document.getElementById('tipoDanoEscudo').value)">
+                <input type="text" name="tipoDanoItemMaoDireita" id="tipoDanoItemMaoDireita"
+                    placeholder="Tipo de dano do Item Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoDireita').value, document.getElementById('bonusItemMaoDireita').value, document.getElementById('danoItemMaoDireita').value, document.getElementById('tipoDanoItemMaoDireita').value)">
+                <input type="text" name="tipoDanoItemMaoEsquerda" id="tipoDanoItemMaoEsquerda"
+                    placeholder="Tipo de dano do Item Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMaoEsquerda').value, document.getElementById('bonusItemMaoEsquerda').value, document.getElementById('danoItemMaoEsquerda').value, document.getElementById('tipoDanoItemMaoEsquerda').value)">
+                <input type="text" name="tipoDanoItemSegundarioMaoDireita" id="tipoDanoItemSegundarioMaoDireita"
+                    placeholder="Tipo de dano do Item Secundário Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSegundarioMaoDireita').value, document.getElementById('bonusItemSegundarioMaoDireita').value, document.getElementById('danoItemSegundarioMaoDireita').value, document.getElementById('tipoDanoItemSegundarioMaoDireita').value)">
+                <input type="text" name="tipoDanoItemSecundarioMaoEsquerda" id="tipoDanoItemSecundarioMaoEsquerda"
+                    placeholder="Tipo de dano do Item Secundário Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemSecundarioMaoEsquerda').value, document.getElementById('bonusItemSecundarioMaoEsquerda').value, document.getElementById('danoItemSecundarioMaoEsquerda').value, document.getElementById('tipoDanoItemSecundarioMaoEsquerda').value)">
+                <input type="text" name="tipoDanoItemMagicoMaoDireita" id="tipoDanoItemMagicoMaoDireita"
+                    placeholder="Tipo de dano do Item Mágico Mão Direita"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoDireita').value, document.getElementById('bonusItemMagicoMaoDireita').value, document.getElementById('danoItemMagicoMaoDireita').value, document.getElementById('tipoDanoItemMagicoMaoDireita').value)">
+                <input type="text" name="tipoDanoItemMagicoMaoEsquerda" id="tipoDanoItemMagicoMaoEsquerda"
+                    placeholder="Tipo de dano do Item Mágico Mão Esquerda"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemMagicoMaoEsquerda').value, document.getElementById('bonusItemMagicoMaoEsquerda').value, document.getElementById('danoItemMagicoMaoEsquerda').value, document.getElementById('tipoDanoItemMagicoMaoEsquerda').value)">
+                <input type="text" name="tipoDanoItemExtra" id="tipoDanoItemExtra"
+                    placeholder="Tipo de Dano do Item Extra"
+                    onchange="equipamentosArmasArmaduras(document.getElementById('nomeItemExtra').value, document.getElementById('bonusItemExtra').value, document.getElementById('danoItemExtra').value, document.getElementById('tipoDanoItemExtra').value)">
             </div>
         </div>
         <!-- EQUIPAMENTOS -->
