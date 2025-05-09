@@ -438,7 +438,7 @@ span {
     margin-top: 735px;
 }
 
-#totalDadosDeVida {
+#totalDadosVida {
     width: 40px;
     height: 20px;
     font-size: 20px;
@@ -446,11 +446,11 @@ span {
     margin-top: 888px;
 }
 
-#dadosDeVida {
-    width: 60px;
+#dadoVida {
+    width: 130px;
     height: 60px;
     font-size: 60px;
-    margin-left: 700px;
+    margin-left: 665px;
     margin-top: 920px;
 }
 

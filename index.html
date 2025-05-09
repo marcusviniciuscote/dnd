@@ -16,7 +16,7 @@
             <input type="text" name="nomePersonagem" id="nomePersonagem">
             <!-- CLASSES -->
             <select name="classePersonagem" id="classePersonagem" class="classePersonagem"
-                onchange="escolherClasse(this.value, this.options[this.selectedIndex].text)">
+                onchange="escolherClasse()">
                 <option value="0">Escolha sua Classe</option>
                 <option value="1">Bárbaro</option>
                 <option value="2">Bardo</option>
@@ -32,10 +32,10 @@
                 <option value="12">Patrulheiro</option>
             </select>
             <!-- NÍVEL DO PERSONAGEM -->
-            <span id="nivelPersonagem"></span>
+            <span id="nivelPersonagem">1</span>
             <!-- ANTECEDENTES -->
             <select name="antecedente" id="antecedente" class="antecedente"
-                onchange="escolherAntecedente(this.value, this.options[this.selectedIndex].text)">
+                onchange="escolherAntecedente()">
                 <option value="0">Escolha seu Antecedente</option>
                 <option value="1">Acólito</option>
                 <option value="2">Artesão de Guilda</option>
@@ -60,7 +60,7 @@
             <input type="text" name="nomeJogador" id="nomeJogador">
             <!-- RAÇAS -->
             <select name="raca" id="raca" class="raca"
-                onchange="escolherRaca(this.value, this.options[this.selectedIndex].text)">
+                onchange="escolherRaca()">
                 <option value="0">Escolha uma Raça</option>
                 <option value="1">Anão da Colina</option>
                 <option value="2">Anão da Montanha</option>
@@ -97,32 +97,32 @@
         <!-- ATRIBUTOS -->
         <div id="atributos" class="atributos">
             <input type="text" name="forca" id="forca"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorForca'), document.getElementById('modificadorResistenciaForca'))">
+                onchange="forca()" >
             <input type="text" name="destreza" id="destreza"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorDestreza'), document.getElementById('modificadorResistenciaDestreza'))">
+                onchange="destreza()">
             <input type="text" name="constituicao" id="constituicao"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorConstituicao'), document.getElementById('modificadorResistenciaConstituicao'))">
+                onchange="constituicao()">
             <input type="text" name="inteligencia" id="inteligencia"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorInteligencia'), document.getElementById('modificadorResistenciaInteligencia'))">
+                onchange="inteligencia()">
             <input type="text" name="sabedoria" id="sabedoria"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorSabedoria'), document.getElementById('modificadorResistenciaSabedoria'))">
+                onchange="sabedoria()">
             <input type="text" name="carisma" id="carisma"
-                onchange="calcularModificador(this.value, document.getElementById('modificadorCarisma'), document.getElementById('modificadorResistenciaCarisma'))">
+                onchange="carisma()">
         </div>
         <!-- MODIFICADORES -->
         <div id="modificadores" class="modificadores">
-            <span id="modificadorForca"></span>
-            <span id="modificadorDestreza"></span>
-            <span id="modificadorConstituicao"></span>
-            <span id="modificadorInteligencia"></span>
-            <span id="modificadorSabedoria"></span>
-            <span id="modificadorCarisma"></span>
-            <span id="sabedoriaPassiva"></span> <!-- Baseado na percepção -->
+            <span id="modificadorForca">0</span>
+            <span id="modificadorDestreza">0</span>
+            <span id="modificadorConstituicao">0</span>
+            <span id="modificadorInteligencia">0</span>
+            <span id="modificadorSabedoria">0</span>
+            <span id="modificadorCarisma">0</span>
+            <span id="sabedoriaPassiva">0</span> <!-- Baseado na percepção -->
         </div>
         <!-- INSPIRAÇÃO E BÔNUS DE PROFICIÊNCIA -->
         <div id="inspiracaoProficiencia" class="inspiracaoProficiencia">
             <input type="text" name="inspiracao" id="inspiracao">
-            <span id="bonusProficiencia"></span><!-- De acordo com o nível -->
+            <span id="bonusProficiencia">0</span><!-- De acordo com o nível -->
         </div>
         <!-- TESTE DE RESISTÊNCIA -->
         <div id="testeResistencia" class="testeResistencia">
@@ -189,8 +189,8 @@
             <span id="pontosDeVidaTotais">1</span>
             <input type="text" name="pontosDeVidaAtuais" id="pontosDeVidaAtuais">
             <input type="text" name="pontosDeVidaTemporarios" id="pontosDeVidaTemporarios">
-            <span id="totalDadosDeVida">1</span>
-            <span id="dadosDeVida">1</span>
+            <span id="totalDadosVida"></span>
+            <span id="dadoVida"></span>
             <div id="testeContraMorte" class="testeContraMorte">
                 <div id="testeContraMorteSucesso" class="testeContraMorteSucesso">
                     <input type="checkbox" name="primeiroSucesso" id="primeiroSucesso">
