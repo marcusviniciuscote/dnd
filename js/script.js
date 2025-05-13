@@ -27,6 +27,22 @@ let pontosExperiencia = document.getElementById('pontosExperiencia')
 let nivelPersonagem = document.getElementById('nivelPersonagem')
 let bonusProficiencia = document.getElementById('bonusProficiencia')
 
+let valorClasseArmadura = document.getElementById('classeArmadura')
+let valorDeslocamento = document.getElementById('deslocamento')
+
+let bonusArmadura = document.getElementById('bonusArmadura')
+let bonusEscudo = document.getElementById('bonusEscudo')
+
+/* let dadosItemArmadura = [document.getElementById('nomeArmadura'), document.getElementById('bonusArmadura'), document.getElementById('danoArmadura'), document.getElementById('tipoDanoArmadura')]
+let dadosItemEscudo = [document.getElementById('nomeEscudo'), document.getElementById('bonusEscudo'), document.getElementById('danoEscudo'), document.getElementById('tipoDanoEscudo')]
+let dadosItemMaoDireita = [document.getElementById('nomeItemMaoDireita'), document.getElementById('bonusItemMaoDireita'), document.getElementById('danoItemMaoDireita'), document.getElementById('tipoDanoItemMaoDireita')]
+let dadosItemMaoEsquerda = [document.getElementById('nomeItemMaoEsquerda'), document.getElementById('bonusItemMaoEsquerda'), document.getElementById('danoItemMaoEsquerda'), document.getElementById('tipoDanoItemMaoEsquerda')]
+let dadosItemSegundarioMaoDireita = [document.getElementById('nomeItemSegundarioMaoDireita'), document.getElementById('bonusItemSegundarioMaoDireita'), document.getElementById('danoItemSegundarioMaoDireita'), document.getElementById('tipoDanoItemSegundarioMaoDireita')]
+let dadosItemSecundarioMaoEsquerda = [document.getElementById('nomeItemSecundarioMaoEsquerda'), document.getElementById('bonusItemSecundarioMaoEsquerda'), document.getElementById('danoItemSecundarioMaoEsquerda'), document.getElementById('tipoDanoItemSecundarioMaoEsquerda')]
+let dadosItemMagicoMaoDireita = [document.getElementById('nomeItemMagicoMaoDireita'), document.getElementById('bonusItemMagicoMaoDireita'), document.getElementById('danoItemMagicoMaoDireita'), document.getElementById('tipoDanoItemMagicoMaoDireita')]
+let dadosItemMagicoMaoEsquerda = [document.getElementById('nomeItemMagicoMaoEsquerda'), document.getElementById('bonusItemMagicoMaoEsquerda'), document.getElementById('danoItemMagicoMaoEsquerda'), document.getElementById('tipoDanoItemMagicoMaoEsquerda')]
+let dadosItemExtra = [document.getElementById('nomeItemExtra'), document.getElementById('bonusItemExtra'), document.getElementById('danoItemExtra'), document.getElementById('tipoDanoItemExtra')]
+ */
 
 function escolherRaca() {
 
@@ -34,8 +50,6 @@ function escolherRaca() {
     idRaca = raca.value
     racaSelect = raca.options
     nomeRacaFinal = racaSelect[raca.selectedIndex].text
-
-    //valorFinalBonusRacial = parseFloat(valorModificadorConstituicao.innerText)
 
     valorOriginalFinalModificadorForca = forca()
     valorOriginalFinalModificadorDestreza = destreza()
@@ -49,70 +63,83 @@ function escolherRaca() {
             /* console.log(nomeRacaFinal) */
             break;
         case 1:
-            console.log(nomeRacaFinal)
             /* Anão da Colina
             +2 constituição
             +1 sabedoria
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorConstituicao.innerHTML = 2 + valorOriginalFinalModificadorConstituicao
             valorModificadorSabedoria.innerHTML = 1 + valorOriginalFinalModificadorSabedoria
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 2:
-            console.log(nomeRacaFinal)
             /* Anão da Montanha
             +2 força
             +2 constituição
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorForca.innerHTML = 2 + valorOriginalFinalModificadorForca
             valorModificadorConstituicao.innerHTML = 2 + valorOriginalFinalModificadorConstituicao
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 3:
-            console.log(nomeRacaFinal)
             /* Alto Elfo
             +2 destreza
             +1 inteligência
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorDestreza.innerHTML = 2 + valorOriginalFinalModificadorDestreza
             valorModificadorInteligencia.innerHTML = 1 + valorOriginalFinalModificadorInteligencia
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 4:
-            console.log(nomeRacaFinal)
             /*Elfo da Floresta
             +2 destreza
             +1 sabedoria
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorDestreza.innerHTML = 2 + valorOriginalFinalModificadorDestreza
             valorModificadorSabedoria.innerHTML = 1 + valorOriginalFinalModificadorSabedoria
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 5:
-            console.log(nomeRacaFinal)
             /*Elfo Negro
             +2 destreza
             +1 carisma
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorDestreza.innerHTML = 2 + valorOriginalFinalModificadorDestreza
             valorModificadorCarisma.innerHTML = 1 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 6:
-            console.log(nomeRacaFinal)
             /*Halfling Pés Leves
             +2 destreza
             +1 carisma
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorDestreza.innerHTML = 2 + valorOriginalFinalModificadorDestreza
             valorModificadorCarisma.innerHTML = 1 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 7:
-            console.log(nomeRacaFinal)
             /*Halfling Robusto
             +2 destreza
             +1 constituição
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorDestreza.innerHTML = 2 + valorOriginalFinalModificadorDestreza
             valorModificadorConstituicao.innerHTML = 1 + valorOriginalFinalModificadorConstituicao
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 8:
-            console.log(nomeRacaFinal)
             /*Humano
             +1 força
             +1 destreza
@@ -120,65 +147,80 @@ function escolherRaca() {
             +1 inteligência
             +1 sabedoria
             +1 carisma
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorForca.innerHTML = 1 + valorOriginalFinalModificadorForca
             valorModificadorDestreza.innerHTML = 1 + valorOriginalFinalModificadorDestreza
             valorModificadorConstituicao.innerHTML = 1 + valorOriginalFinalModificadorConstituicao
             valorModificadorInteligencia.innerHTML = 1 + valorOriginalFinalModificadorInteligencia
             valorModificadorSabedoria.innerHTML = 1 + valorOriginalFinalModificadorSabedoria
             valorModificadorCarisma.innerHTML = 1 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 9:
-            console.log(nomeRacaFinal)
             /*Draconato
             +2 força
             +1 carisma
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorForca.innerHTML = 2 + valorOriginalFinalModificadorForca
             valorModificadorCarisma.innerHTML = 1 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 10:
-            console.log(nomeRacaFinal)
             /*Gnomo da Floresta
             +1 destreza
             +2 inteligência
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorDestreza.innerHTML = 1 + valorOriginalFinalModificadorDestreza
             valorModificadorInteligencia.innerHTML = 2 + valorOriginalFinalModificadorInteligencia
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 11:
-            console.log(nomeRacaFinal)
             /*Gnomo da Rochas
             +1 constituição
             +2 inteligência
+            deslocamento 7,5m
             */
+            deslocamentoBase = '7,5m'
             valorModificadorConstituicao.innerHTML = 1 + valorOriginalFinalModificadorConstituicao
             valorModificadorInteligencia.innerHTML = 2 + valorOriginalFinalModificadorInteligencia
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 12:
-            console.log(nomeRacaFinal)
             /*Meio-Elfo
             +2 carisma
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorCarisma.innerHTML = 2 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 13:
-            console.log(nomeRacaFinal)
             /*Meio-Orc
             +2 força
             +1 constituição
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorForca.innerHTML = 2 + valorOriginalFinalModificadorForca
             valorModificadorConstituicao.innerHTML = 1 + valorOriginalFinalModificadorConstituicao
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         case 14:
-            console.log(nomeRacaFinal)
             /*Tiefling
             +1 inteligência
             +2 carisma
+            deslocamento 9m
             */
+            deslocamentoBase = '9m'
             valorModificadorInteligencia.innerHTML = 1 + valorOriginalFinalModificadorInteligencia
             valorModificadorCarisma.innerHTML = 2 + valorOriginalFinalModificadorCarisma
+            valorDeslocamento.innerHTML = deslocamentoBase
             break;
         default:
             break;
@@ -614,14 +656,12 @@ function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusP
     escolherClasse()
 }
 
-
 function testeResistencia(resistenciaProficiencia, modificadorResistencia) {
     if (resistenciaProficiencia.checked = true) {
         console.log(modificadorResistencia)
-        console.log("Foi")
     }
     else {
-        console.log("Errado")
+        alert("Algo de errado aconteceu na funcão testeResistencia")
     }
 }
 
@@ -662,7 +702,7 @@ function alterarModificadorResistencia(modificadoresResistencia) {
 
             testeResistencia.innerHTML = valorFinalResitencia
         } else {
-            console.log("Erro marcar resistencias")
+            console.log("Erro ao marcar resistências")
         }
     });
 
@@ -670,10 +710,6 @@ function alterarModificadorResistencia(modificadoresResistencia) {
 
 function dadoVida(dadoVida) {
     valorDadoVida.innerHTML = dadoVida
-}
-
-function equipamentosArmasArmaduras(nomeEquipamento = null, bonusEquipamento = null, danoEquipamento = null, tipoDanoEquipamento = null) {
-    console.log([nomeEquipamento, bonusEquipamento, danoEquipamento, tipoDanoEquipamento])
 }
 
 function calcularModificador(valorAtributo, valorModificador, valorModificadorResistencia) {
@@ -757,6 +793,7 @@ function forca() {
 }
 function destreza() {
     let valorOriginalModificadorDestreza = calcularModificador(valorDestreza.value, valorModificadorDestreza, valorModificadorResistenciaDestreza)
+    classeArmadura()
     return valorOriginalModificadorDestreza
 }
 function constituicao() {
@@ -776,6 +813,183 @@ function carisma() {
     return valorOriginalModificadorCarisma
 }
 
+function equipamentosArmasArmaduras(equipamentos) {
+    dadosEquipamentos = equipamentos
+
+    console.log(parseFloat(dadosEquipamentos[1]))
+    return parseFloat(dadosEquipamentos[1])
+}
+
+
+function classeArmadura() {
+
+    nomeArmadura = document.getElementById('nomeArmadura')
+    idNomeArmadura = nomeArmadura.value
+    nomeArmaduraSelect = nomeArmadura.options
+    nomeArmaduraFinal = nomeArmaduraSelect[nomeArmadura.selectedIndex].text
+    valorModificadorDestrezaFinal = valorModificadorDestreza.innerText
+
+    switch (nomeArmaduraFinal) {
+        case 'Escolha uma Armadura':
+            valorBonusClasseArmadura = 10
+            classeArmaduraComArmadura = valorBonusClasseArmadura
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+        case 'Sem Armadura':
+            /* 10 + modificador de Des */
+            valorBonusClasseArmadura = 10
+            classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Acolchoada':
+            /* 11 + modificador de Des */
+            valorBonusClasseArmadura = 11
+            classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Couro':
+            /* 11 + modificador de Des */
+            valorBonusClasseArmadura = 11
+            classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Couro Batido':
+            /* 12 + modificador de Des */
+            valorBonusClasseArmadura = 12
+            classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Gibão de Peles':
+            /* 12 + modificador de Des (máx. +2) */
+            valorBonusClasseArmadura = 12
+            if (valorModificadorDestrezaFinal <= 2) {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            } else {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + 2
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            }
+            break;
+        case 'Camisão de Malha':
+            /* 13 + modificador de Des (máx. +2) */
+            valorBonusClasseArmadura = 13
+            if (valorModificadorDestrezaFinal <= 2) {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            } else {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + 2
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            }
+            break;
+        case 'Brunea':
+            /* 14 + modificador de Des (máx. +2) */
+            valorBonusClasseArmadura = 14
+            if (valorModificadorDestrezaFinal <= 2) {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            } else {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + 2
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            }
+            break;
+        case 'Peitoral':
+            /* 14 + modificador de Des (máx. +2) */
+            valorBonusClasseArmadura = 14
+            if (valorModificadorDestrezaFinal <= 2) {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            } else {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + 2
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            }
+            break;
+        case 'Meia-Armadura':
+            /* 15 + modificador de Des (máx. +2) */
+            valorBonusClasseArmadura = 15
+            if (valorModificadorDestrezaFinal <= 2) {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + parseFloat(valorModificadorDestrezaFinal)
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            } else {
+                classeArmaduraComArmadura = valorBonusClasseArmadura + 2
+                classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            }
+            break;
+        case 'Cota de anéis':
+            /* 14 */
+            valorBonusClasseArmadura = 14
+            classeArmaduraComArmadura = valorBonusClasseArmadura
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Cota de malha':
+            /* 16 */
+            valorBonusClasseArmadura = 16
+            classeArmaduraComArmadura = valorBonusClasseArmadura
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Cota de talas':
+            /* 17 */
+            valorBonusClasseArmadura = 17
+            classeArmaduraComArmadura = valorBonusClasseArmadura
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        case 'Placas':
+            /* 18 */
+            valorBonusClasseArmadura = 18
+            classeArmaduraComArmadura = valorBonusClasseArmadura
+            classeArmaduraComArmaduraFinal = escudo(classeArmaduraComArmadura)
+            break;
+        default:
+            break;
+    }
+
+    function escudo(valorArmadura) {
+
+        valorEscudoSim = document.getElementById('nomeEscudoSim')
+        valorEscudoNao = document.getElementById('nomeEscudoNao')
+        let valorClasseArmaduraEscudoFinal = 0
+
+        if (valorEscudoSim.checked === true) {
+            valorClasseArmaduraEscudoFinal = valorArmadura + parseFloat(2)
+            bonusEscudo.innerHTML = 2
+        } else {
+            valorClasseArmaduraEscudoFinal = valorArmadura
+            bonusEscudo.innerHTML = 0
+        }
+
+        return valorClasseArmaduraEscudoFinal
+    }
+
+    bonusArmadura.innerHTML = valorBonusClasseArmadura
+    valorClasseArmadura.innerHTML = classeArmaduraComArmaduraFinal
+    return classeArmaduraComArmaduraFinal
+}
+
+function itemMaoDireita() {
+    console.log(dadosItemMaoDireita)
+}
+
+function itemMaoEsquerda() {
+    console.log(dadosItemMaoEsquerda)
+}
+
+function itemSegundarioMaoDireita() {
+    console.log(dadosItemSegundarioMaoDireita)
+}
+
+function itemSecundarioMaoEsquerda() {
+    console.log(dadosItemSecundarioMaoEsquerda)
+}
+
+function itemMagicoMaoDireita() {
+    console.log(dadosItemMagicoMaoDireita)
+}
+
+function itemMagicoMaoEsquerda() {
+    console.log(dadosItemMagicoMaoEsquerda)
+}
+
+function itemExtra() {
+    console.log(dadosItemExtra)
+}
 
 function principal() {
 
@@ -783,6 +997,6 @@ function principal() {
 
 }
 
-function prencerDadosFicha() { }
+function preencherDadosFicha() { }
 
 

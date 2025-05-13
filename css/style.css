@@ -409,7 +409,9 @@ span {
 }
 
 #deslocamento {
-    margin-left: 975px;
+    width: 100px;
+    font-size: 50px;
+    margin-left: 955px;
 }
 
 .vida span {
@@ -426,7 +428,10 @@ span {
 }
 
 #pontosDeVidaTotais {
-    margin-left: 900px;
+    width: 300px;
+    height: 20px;
+    font-size: 20px;
+    margin-left: 750px;
     margin-top: 550px;
 }
 
@@ -490,11 +495,13 @@ span {
     margin-left: 1036px;
 }
 
-.ataquesMagiasArmaduras input {
+.ataquesMagiasArmaduras input,
+select {
     margin-top: 1090px;
 }
 
-#nomeAtaqueMagiaArmadura input {
+.nomeAtaqueMagiaArmadura input,
+.nomeAtaqueMagiaArmadura select {
     width: 180px;
     height: 40px;
     margin-left: 620px;
@@ -504,7 +511,25 @@ span {
     margin-top: 1090px;
 }
 
-#nomeEscudo {
+.nomeEscudoSim {
+    margin-left: 625px;
+    margin-top: 1155px;
+}
+.nomeEscudoNao {
+    margin-left: 710px;
+    margin-top: 1155px;
+}
+
+#nomeEscudoSim {
+    width: 30px;
+    margin-left: 670px;
+    margin-top: 1145px;
+
+}
+
+#nomeEscudoNao {
+    width: 30px;
+    margin-left: 750px;
     margin-top: 1145px;
 }
 
@@ -536,7 +561,7 @@ span {
     margin-top: 1530px;
 }
 
-#bonusAtaqueMagiaArmadura input {
+#bonusAtaqueMagiaArmadura input, #bonusAtaqueMagiaArmadura span {
     width: 80px;
     height: 40px;
     margin-left: 820px;
