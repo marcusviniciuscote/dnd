@@ -19,6 +19,13 @@ let valorModificadorResistenciaInteligencia = document.getElementById('modificad
 let valorModificadorResistenciaSabedoria = document.getElementById('modificadorResistenciaSabedoria')
 let valorModificadorResistenciaCarisma = document.getElementById('modificadorResistenciaCarisma')
 
+let valorModificadorResistenciaMarcadaForca = document.getElementById('resistenciaForca')
+let valorModificadorResistenciaMarcadaDestreza = document.getElementById('resistenciaDestreza')
+let valorModificadorResistenciaMarcadaConstituicao = document.getElementById('resistenciaConstituicao')
+let valorModificadorResistenciaMarcadaInteligencia = document.getElementById('resistenciaInteligencia')
+let valorModificadorResistenciaMarcadaSabedoria = document.getElementById('resistenciaSabedoria')
+let valorModificadorResistenciaMarcadaCarisma = document.getElementById('resistenciaCarisma')
+
 let valorDadoVida = document.getElementById('dadoVida')
 let valorTotalDadosVida = document.getElementById('totalDadosVida')
 
@@ -32,6 +39,45 @@ let valorDeslocamento = document.getElementById('deslocamento')
 
 let bonusArmadura = document.getElementById('bonusArmadura')
 let bonusEscudo = document.getElementById('bonusEscudo')
+
+let valorPericiaAcrobacia = document.getElementById('periciaAcrobacia')
+let valorPericiaArcanismo = document.getElementById('periciaArcanismo')
+let valorPericiaAtletismo = document.getElementById('periciaAtletismo')
+let valorPericiaAtuacao = document.getElementById('periciaAtuacao')
+let valorPericiaBlefar = document.getElementById('periciaBlefar')
+let valorPericiaFurtividade = document.getElementById('periciaFurtividade')
+let valorPericiaHistoria = document.getElementById('periciaHistoria')
+let valorPericiaIntimidacao = document.getElementById('periciaIntimidacao')
+let valorPericiaIntuicao = document.getElementById('periciaIntuicao')
+let valorPericiaInvestigacao = document.getElementById('periciaInvestigacao')
+let valorPericiaLidarComAnimais = document.getElementById('periciaLidarComAnimais')
+let valorPericiaMedicina = document.getElementById('periciaMedicina')
+let valorPericiaNatureza = document.getElementById('periciaNatureza')
+let valorPericiaPercepcao = document.getElementById('periciaPercepcao')
+let valorPericiaPersuasao = document.getElementById('periciaPersuasao')
+let valorPericiaPrestidigitaca = document.getElementById('periciaPrestidigitacao')
+let valorPericiaReligiao = document.getElementById('periciaReligiao')
+let valorPericiaSobrevivencia = document.getElementById('periciaSobrevivencia')
+
+let valorModificadorPericiaAcrobacia = document.getElementById('modificadorPericiaAcrobacia') //Modificador  DESTREZA
+let valorModificadorPericiaArcanismo = document.getElementById('modificadorPericiaArcanismo') //Modificador INTELIGENCIA
+let valorModificadorPericiaAtletismo = document.getElementById('modificadorPericiaAtletismo') //Modificador FORCA
+let valorModificadorPericiaAtuacao = document.getElementById('modificadorPericiaAtuacao') //Modificador CARISMA
+let valorModificadorPericiaBlefar = document.getElementById('modificadorPericiaBlefar') //Modificador CARISMA
+let valorModificadorPericiaFurtividade = document.getElementById('modificadorPericiaFurtividade') //Modificador DESTREZA
+let valorModificadorPericiaHistoria = document.getElementById('modificadorPericiaHistoria') //Modificador INTELIGENCIA
+let valorModificadorPericiaIntimidacao = document.getElementById('modificadorPericiaIntimidacao') //Modificador CARISMA
+let valorModificadorPericiaIntuicao = document.getElementById('modificadorPericiaIntuicao') //Modificador SABEDORIA
+let valorModificadorPericiaInvestigacao = document.getElementById('modificadorPericiaInvestigacao') //Modificador INTELIGENCIA
+let valorModificadorPericiaLidarComAnimais = document.getElementById('modificadorPericiaLidarComAnimais') //Modificador SABEDORIA
+let valorModificadorPericiaMedicina = document.getElementById('modificadorPericiaMedicina') //Modificador SABEDORIA
+let valorModificadorPericiaNatureza = document.getElementById('modificadorPericiaNatureza') //Modificador INTELIGENCIA
+let valorModificadorPericiaPercepcao = document.getElementById('modificadorPericiaPercepcao') //Modificador SABEDORIA
+let valorModificadorPericiaPersuasao = document.getElementById('modificadorPericiaPersuasao') //Modificador CARISMA
+let valorModificadorPericiaPrestidigitacao = document.getElementById('modificadorPericiaPrestidigitacao') //Modificador DESTREZA
+let valorModificadorPericiaReligiao = document.getElementById('modificadorPericiaReligiao') //Modificador INTELIGENCIA
+let valorModificadorPericiaSobrevivencia = document.getElementById('modificadorPericiaSobrevivencia') //Modificador SABEDORIA
+
 
 /* let dadosItemArmadura = [document.getElementById('nomeArmadura'), document.getElementById('bonusArmadura'), document.getElementById('danoArmadura'), document.getElementById('tipoDanoArmadura')]
 let dadosItemEscudo = [document.getElementById('nomeEscudo'), document.getElementById('bonusEscudo'), document.getElementById('danoEscudo'), document.getElementById('tipoDanoEscudo')]
@@ -247,7 +293,6 @@ function escolherClasse() {
             Força
             Constituição
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaForca', 'resistenciaConstituicao']
@@ -264,7 +309,6 @@ function escolherClasse() {
             Destreza
             Carisma
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaDestreza', 'resistenciaCarisma']
@@ -281,7 +325,6 @@ function escolherClasse() {
             Sabedoria
             Carisma
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaSabedoria', 'resistenciaCarisma']
@@ -298,7 +341,6 @@ function escolherClasse() {
             Sabedoria
             Carisma
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaSabedoria', 'resistenciaCarisma']
@@ -315,7 +357,6 @@ function escolherClasse() {
             Inteligência
             Sabedoria
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaInteligencia', 'resistenciaSabedoria']
@@ -332,7 +373,6 @@ function escolherClasse() {
             Constituição
             Carisma
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaConstituicao', 'resistenciaCarisma']
@@ -349,7 +389,6 @@ function escolherClasse() {
             Força
             Constituição
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaForca', 'resistenciaConstituicao']
@@ -366,7 +405,6 @@ function escolherClasse() {
             Destreza
             Inteligência
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaDestreza', 'resistenciaInteligencia']
@@ -383,7 +421,6 @@ function escolherClasse() {
             Inteligência
             Sabedoria
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaInteligencia', 'resistenciaSabedoria']
@@ -400,7 +437,6 @@ function escolherClasse() {
             Força
             Destreza
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaForca', 'resistenciaDestreza']
@@ -417,7 +453,6 @@ function escolherClasse() {
             Sabedoria
             Carisma
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaSabedoria', 'resistenciaCarisma']
@@ -434,7 +469,6 @@ function escolherClasse() {
             Força
             Destreza
             */
-            console.log(nomeClasseFinal)
             desmarcarResistencias()
 
             resistencias = ['resistenciaForca', 'resistenciaDestreza']
@@ -656,13 +690,26 @@ function calcularNivel(valorPontosExperiencia, valorNivelPersonagem, valorBonusP
     escolherClasse()
 }
 
-function testeResistencia(resistenciaProficiencia, modificadorResistencia) {
-    if (resistenciaProficiencia.checked = true) {
-        console.log(modificadorResistencia)
-    }
-    else {
-        alert("Algo de errado aconteceu na funcão testeResistencia")
-    }
+function testarResistenciaMarcada() {
+
+    resistencias = [
+        [valorModificadorResistenciaMarcadaForca, valorModificadorResistenciaForca, valorModificadorForca], 
+        [valorModificadorResistenciaMarcadaDestreza, valorModificadorResistenciaDestreza, valorModificadorDestreza], 
+        [valorModificadorResistenciaMarcadaConstituicao, valorModificadorResistenciaConstituicao, valorModificadorConstituicao], 
+        [valorModificadorResistenciaMarcadaInteligencia, valorModificadorResistenciaInteligencia, valorModificadorInteligencia], 
+        [valorModificadorResistenciaMarcadaSabedoria, valorModificadorResistenciaSabedoria, valorModificadorSabedoria], 
+        [valorModificadorResistenciaMarcadaCarisma, valorModificadorResistenciaCarisma, valorModificadorCarisma], 
+    ]
+
+    resistencias.forEach(element => {
+        if (element[0].checked) {
+            element[1].innerHTML = parseFloat(element[2].innerText) + parseFloat(bonusProficiencia.innerText)
+        } else {
+            console.log('Algo está errado')
+            element[1].innerHTML = parseFloat(element[2].innerText)
+        }
+    });
+
 }
 
 function desmarcarResistencias() {
@@ -712,7 +759,7 @@ function dadoVida(dadoVida) {
     valorDadoVida.innerHTML = dadoVida
 }
 
-function calcularModificador(valorAtributo, valorModificador, valorModificadorResistencia) {
+function calcularModificador(valorAtributo) {
     switch (parseInt(valorAtributo)) {
         case 1:
             novoValorModificador = -5
@@ -779,8 +826,6 @@ function calcularModificador(valorAtributo, valorModificador, valorModificadorRe
         default:
             novoValorModificador = 0
     }
-    valorModificador.innerHTML = parseFloat(novoValorModificador)
-    valorModificadorResistencia.innerHTML = parseFloat(novoValorModificador)
 
     let valorOriginalModificador = parseFloat(novoValorModificador)
 
@@ -788,29 +833,120 @@ function calcularModificador(valorAtributo, valorModificador, valorModificadorRe
 }
 
 function forca() {
-    let valorOriginalModificadorForca = calcularModificador(valorForca.value, valorModificadorForca, valorModificadorResistenciaForca)
+    let valorOriginalModificadorForca = calcularModificador(valorForca.value)
+    valorModificadorForca.innerHTML = valorOriginalModificadorForca
+    valorModificadorResistenciaForca.innerHTML = valorOriginalModificadorForca
+    valorModificadorPericiaAtletismo.innerHTML = valorOriginalModificadorForca
     return valorOriginalModificadorForca
 }
 function destreza() {
-    let valorOriginalModificadorDestreza = calcularModificador(valorDestreza.value, valorModificadorDestreza, valorModificadorResistenciaDestreza)
+    let valorOriginalModificadorDestreza = calcularModificador(valorDestreza.value)
     classeArmadura()
+    valorModificadorDestreza.innerHTML = valorOriginalModificadorDestreza
+    valorModificadorResistenciaDestreza.innerHTML = valorOriginalModificadorDestreza
+    valorModificadorPericiaAcrobacia.innerHTML = valorOriginalModificadorDestreza
+    valorModificadorPericiaFurtividade.innerHTML = valorOriginalModificadorDestreza
+    valorModificadorPericiaPrestidigitacao.innerHTML = valorOriginalModificadorDestreza
     return valorOriginalModificadorDestreza
 }
 function constituicao() {
-    let valorOriginalModificadorConstituicao = calcularModificador(valorConstituicao.value, valorModificadorConstituicao, valorModificadorResistenciaConstituicao)
+    let valorOriginalModificadorConstituicao = calcularModificador(valorConstituicao.value)
+    valorModificadorConstituicao.innerHTML = valorOriginalModificadorConstituicao
+    valorModificadorResistenciaConstituicao.innerHTML = valorOriginalModificadorConstituicao
     return valorOriginalModificadorConstituicao
 }
 function inteligencia() {
-    let valorOriginalModificadorInteligencia = calcularModificador(valorInteligencia.value, valorModificadorInteligencia, valorModificadorResistenciaInteligencia)
+    let valorOriginalModificadorInteligencia = calcularModificador(valorInteligencia.value)
+    valorModificadorInteligencia.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorResistenciaInteligencia.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorPericiaArcanismo.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorPericiaHistoria.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorPericiaInvestigacao.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorPericiaNatureza.innerHTML = valorOriginalModificadorInteligencia
+    valorModificadorPericiaReligiao.innerHTML = valorOriginalModificadorInteligencia
     return valorOriginalModificadorInteligencia
 }
 function sabedoria() {
-    let valorOriginalModificadorSabedoria = calcularModificador(valorSabedoria.value, valorModificadorSabedoria, valorModificadorResistenciaSabedoria)
+    let valorOriginalModificadorSabedoria = calcularModificador(valorSabedoria.value)
+    valorModificadorSabedoria.innerHTML = valorOriginalModificadorSabedoria
+    valorModificadorResistenciaSabedoria.innerHTML = valorOriginalModificadorSabedoria
+    valorModificadorPericiaIntuicao.innerHTML = valorOriginalModificadorSabedoria
+    valorModificadorPericiaLidarComAnimais.innerHTML = valorOriginalModificadorSabedoria
+    valorModificadorPericiaMedicina.innerHTML = valorOriginalModificadorSabedoria
+    valorModificadorPericiaPercepcao.innerHTML = valorOriginalModificadorSabedoria
+    calcularSabedoriaPassiva()
+    valorModificadorPericiaSobrevivencia.innerHTML = valorOriginalModificadorSabedoria
     return valorOriginalModificadorSabedoria
 }
 function carisma() {
-    let valorOriginalModificadorCarisma = calcularModificador(valorCarisma.value, valorModificadorCarisma, valorModificadorResistenciaCarisma)
+    let valorOriginalModificadorCarisma = calcularModificador(valorCarisma.value)
+    valorModificadorCarisma.innerHTML = valorOriginalModificadorCarisma
+    valorModificadorResistenciaCarisma.innerHTML = valorOriginalModificadorCarisma
+    valorModificadorPericiaAtuacao.innerHTML = valorOriginalModificadorCarisma
+    valorModificadorPericiaBlefar.innerHTML = valorOriginalModificadorCarisma
+    valorModificadorPericiaIntimidacao.innerHTML = valorOriginalModificadorCarisma
+    valorModificadorPericiaPersuasao.innerHTML = valorOriginalModificadorCarisma
     return valorOriginalModificadorCarisma
+}
+function calcularSabedoriaPassiva() {
+    valorSabedoriaPassiva = document.getElementById('sabedoriaPassiva')
+    valorSabedoriaPassivaFinal = valorSabedoriaPassiva
+    valorSabedoriaPassivaFinal.innerHTML = valorModificadorPericiaPercepcao.innerText
+    return valorSabedoriaPassivaFinal
+}
+
+function calcularPericia() {
+
+    valorOriginalFinalModificadorForca = forca()
+    valorOriginalFinalModificadorDestreza = destreza()
+    valorOriginalFinalModificadorConstituicao = constituicao()
+    valorOriginalFinalModificadorInteligencia = inteligencia()
+    valorOriginalFinalModificadorSabedoria = sabedoria()
+    valorOriginalFinalModificadorCarisma = carisma()
+
+    /* pericias = [
+        ['periciaAcrobacia', 'modificadorPericiaAcrobacia'],
+        ['periciaArcanismo', 'modificadorPericiaArcanismo'],
+        ['periciaAtletismo', 'modificadorPericiaAtletismo'],
+        ['periciaAtuacao', 'modificadorPericiaAtuacao'],
+        ['periciaBlefar', 'modificadorPericiaBlefar'],
+        ['periciaFurtividade', 'modificadorPericiaFurtividade'],
+        ['periciaHistoria', 'modificadorPericiaHistoria'],
+        ['periciaIntimidacao', 'modificadorPericiaIntimidacao'],
+        ['periciaIntuicao', 'modificadorPericiaIntuicao'],
+        ['periciaInvestigacao', 'modificadorPericiaInvestigacao'],
+        ['periciaLidarComAnimais', 'modificadorPericiaLidarComAnimais'],
+        ['periciaMedicina', 'modificadorPericiaMedicina'],
+        ['periciaNatureza', 'modificadorPericiaNatureza'],
+        ['periciaPercepcao', 'modificadorPericiaPercepcao'],
+        ['periciaPersuasao', 'modificadorPericiaPersuasao'],
+        ['periciaPrestidigitacao', 'modificadorPericiaPrestidigitacao'],
+        ['periciaReligiao', 'modificadorPericiaReligiao'],
+        ['periciaSobrevivencia', 'modificadorPericiaSobrevivencia']
+    ] */
+
+
+
+    if (valorPericiaAcrobacia.checked === true) { valorModificadorPericiaAcrobacia.innerHTML = parseFloat(valorModificadorPericiaAcrobacia.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaArcanismo.checked === true) { valorModificadorPericiaArcanismo.innerHTML = parseFloat(valorModificadorPericiaArcanismo.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaAtletismo.checked === true) { valorModificadorPericiaAtletismo.innerHTML = parseFloat(valorModificadorPericiaAtletismo.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaAtuacao.checked === true) { valorModificadorPericiaAtuacao.innerHTML = parseFloat(valorModificadorPericiaAtuacao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaBlefar.checked === true) { valorModificadorPericiaBlefar.innerHTML = parseFloat(valorModificadorPericiaBlefar.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaFurtividade.checked === true) { valorModificadorPericiaFurtividade.innerHTML = parseFloat(valorModificadorPericiaFurtividade.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaHistoria.checked === true) { valorModificadorPericiaHistoria.innerHTML = parseFloat(valorModificadorPericiaHistoria.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaIntimidacao.checked === true) { valorModificadorPericiaIntimidacao.innerHTML = parseFloat(valorModificadorPericiaIntimidacao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaIntuicao.checked === true) { valorModificadorPericiaIntuicao.innerHTML = parseFloat(valorModificadorPericiaIntuicao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaInvestigacao.checked === true) { valorModificadorPericiaInvestigacao.innerHTML = parseFloat(valorModificadorPericiaInvestigacao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaLidarComAnimais.checked === true) { valorModificadorPericiaLidarComAnimais.innerHTML = parseFloat(valorModificadorPericiaLidarComAnimais.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaMedicina.checked === true) { valorModificadorPericiaMedicina.innerHTML = parseFloat(valorModificadorPericiaMedicina.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaNatureza.checked === true) { valorModificadorPericiaNatureza.innerHTML = parseFloat(valorModificadorPericiaNatureza.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaPercepcao.checked === true) { valorModificadorPericiaPercepcao.innerHTML = parseFloat(valorModificadorPericiaPercepcao.innerText) + parseFloat(bonusProficiencia.innerText)
+        calcularSabedoriaPassiva()}
+    if (valorPericiaPersuasao.checked === true) { valorModificadorPericiaPersuasao.innerHTML = parseFloat(valorModificadorPericiaPersuasao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaPrestidigitaca.checked === true) { valorModificadorPericiaPrestidigitacao.innerHTML = parseFloat(valorModificadorPericiaPrestidigitacao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaReligiao.checked === true) { valorModificadorPericiaReligiao.innerHTML = parseFloat(valorModificadorPericiaReligiao.innerText) + parseFloat(bonusProficiencia.innerText) }
+    if (valorPericiaSobrevivencia.checked === true) { valorModificadorPericiaSobrevivencia.innerHTML = parseFloat(valorModificadorPericiaSobrevivencia.innerText) + parseFloat(bonusProficiencia.innerText) }
+
 }
 
 function equipamentosArmasArmaduras(equipamentos) {
